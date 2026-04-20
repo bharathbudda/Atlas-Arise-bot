@@ -1,0 +1,16 @@
+{
+  "name": "atlas-arise-bot",
+  "version": "1.0.0",
+  "description": "Atlas — personal travel memory bot",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
