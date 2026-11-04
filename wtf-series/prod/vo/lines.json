@@ -1,0 +1,62 @@
+{
+ "ep01": [
+  "The clocks on GPS satellites are set to run wrong. On purpose.",
+  "GPS is a timing machine. Satellites twenty thousand kilometres up broadcast the exact time, and your phone works out where you are from how long each signal took to arrive.",
+  "Up there, gravity is weaker, and Einstein showed clocks tick faster in weaker gravity. About forty-five microseconds a day.",
+  "But the satellites also fly at nearly four kilometres a second, and moving clocks tick slower. About seven microseconds.",
+  "Net: thirty-eight microseconds fast, every day. Sounds tiny.",
+  "Wait.",
+  "The signals travel at the speed of light, so that drift is worth more than ten kilometres of error. Per day.",
+  "So before launch, engineers tune each clock to tick slightly slow, and in orbit it ticks at the right rate.",
+  "So the next time that blue dot finds you, remember..."
+ ],
+ "ep02": [
+  "A whale's closest living relative is a hippo.",
+  "Wait.",
+  "Family trees aren't built on looks. They're built on ancestry.",
+  "The clincher came from DNA. In 1999, a team in Japan found \"jumping genes\", bits of DNA that copy-paste themselves into the genome, sitting in the exact same spots in whales and hippos, and missing in cows and deer.",
+  "The same random spot, twice? That basically never happens by chance.",
+  "Then the fossils agreed. Ancient whales that still had legs turned up with a double-pulley ankle bone, the signature of even-toed hoofed mammals.",
+  "So no, whales didn't evolve from hippos. They're cousins, with a shared ancestor that lived more than fifty million years ago. One family ended up wallowing in rivers. The other went all in on the ocean.",
+  "So next time someone asks you what a whale's closest living relative is..."
+ ],
+ "ep03": [
+  "Every piano repeats itself after twelve keys. Why twelve?",
+  "Because twelve is where maths and your ears almost agree.",
+  "Notes sound good together when their frequencies form simple ratios. Double the frequency and you get the same note, an octave higher. Multiply by three over two and you get a fifth.",
+  "Now stack fifths. After twelve of them, you land almost exactly seven octaves up.",
+  "Wait. Almost?",
+  "Twelve fifths multiply the frequency by 129.7. Seven octaves give exactly 128. That gap is the Pythagorean comma.",
+  "Over centuries, musicians settled on a compromise. Shrink every fifth by a hair, and twelve equal steps fit the octave perfectly.",
+  "It's not universal. Indian music theory describes twenty-two shrutis, and Javanese gamelan uses scales of five or seven tones.",
+  "Twelve isn't magic. It's the best deal our ears would accept. That's why..."
+ ],
+ "ep04": [
+  "You've been told you're more bacteria than human. Ten microbes for every one of your cells.",
+  "That number came from a back-of-the-envelope estimate in 1972, and it got repeated for more than forty years.",
+  "In 2016, researchers in Israel and Canada finally made a careful estimate. About thirty-eight trillion bacteria, mostly in your colon. About thirty trillion human cells, eighty-four percent of them red blood cells.",
+  "So not ten to one. Roughly one point three to one.",
+  "Wait. It gets better. Bacteria are tiny. All of yours together weigh about two hundred grams. Roughly one mango.",
+  "The ratio isn't even fixed. A single trip to the toilet can flush out enough gut bacteria to tip the balance back toward you.",
+  "By count, it's close to a tie. By weight, you're overwhelmingly you. Even though..."
+ ],
+ "ep05": [
+  "\"OK\" might be the most successful joke ever printed.",
+  "In the late 1830s, Boston newspapers had a craze for abbreviating deliberately misspelled phrases. O.W., \"oll wright\". K.G., \"know go\".",
+  "On the twenty-third of March, 1839, the Boston Morning Post printed \"o.k.\", short for \"all correct\", jokingly spelled \"oll korrect\".",
+  "Most of these jokes died. OK got lucky.",
+  "In 1840, President Martin Van Buren ran for re-election. His nickname was \"Old Kinderhook\", after his hometown. Supporters formed O.K. Clubs, and suddenly two letters were everywhere.",
+  "Van Buren lost. The word won.",
+  "Wait. Nobody pieced this together until the 1960s, when linguist Allen Walker Read dug through old newspapers and followed the trail.",
+  "So every time you text \"OK\", you're finishing a joke from 1839. Which is why..."
+ ],
+ "ep06": [
+  "Plane windows are round because square ones made jets crash. That's only half right.",
+  "In 1954, two de Havilland Comets, the world's first jet airliners, broke apart in mid-air, less than three months apart.",
+  "Investigators sank an entire Comet fuselage in a giant water tank and pressurised it again and again until it split open.",
+  "Wait.",
+  "The Comet's passenger windows already had rounded corners, just tightly rounded. The inquiry found the first break-up most likely began at the corner of a small antenna window in the roof.",
+  "Every flight, the cabin swells slightly, then relaxes. Stress flows around every hole in the skin and piles up at tight corners. After about a thousand flights, the metal cracked.",
+  "So the real lesson wasn't just \"make windows round\". It was: design every opening for fatigue. So when you hear that..."
+ ]
+}

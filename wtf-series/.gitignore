@@ -1,3 +1,8 @@
 __pycache__/
 sample10/out/
 sample10/clip/
+prod/*/raw/
+prod/**/*.png
+prod/**/*.mp3
+prod/**/*.mp4
+prod/music/*
