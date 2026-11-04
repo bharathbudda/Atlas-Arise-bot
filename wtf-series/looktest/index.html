@@ -1,0 +1,71 @@
+<title>WTF Look Test</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Caveat:wght@700&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+/* Layout: frames gallery first (the thing to judge), then the model comparison, then the verdict. */
+:root{--bg:#F4F6FA;--paper:#FFFFFF;--ink:#13213C;--muted:#55627A;--line:#D9DFEA;--accent:#E0700A;--good:#1F7A4D;--bad:#B3261E;
+ --display:'Bricolage Grotesque',system-ui,sans-serif;--hand:'Caveat',cursive;--mono:'JetBrains Mono',ui-monospace,monospace}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0E1830;--paper:#13213C;--ink:#EEF2F8;--muted:#9AA9C4;--line:#24365E;--accent:#FF8C1A;--good:#6FD3A0;--bad:#FF8A80;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0E1830;--paper:#13213C;--ink:#EEF2F8;--muted:#9AA9C4;--line:#24365E;--accent:#FF8C1A;--good:#6FD3A0;--bad:#FF8A80;color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font:500 16px/1.55 var(--display);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1120px;margin:0 auto;padding-block:32px 80px;display:grid;gap:40px}
+h1,h2{font-family:var(--display);font-weight:800;line-height:1.08;text-wrap:balance;margin:0}
+h1{font-size:clamp(32px,5.4vw,52px);letter-spacing:-.02em} h2{font-size:clamp(22px,3vw,30px)}
+p{margin:0;max-width:70ch}
+.eyebrow{font:700 13px var(--mono);letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.lede{color:var(--muted);font-size:18px}
+section{display:grid;gap:16px}
+.frames{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
+figure{margin:0;display:grid;gap:8px;align-content:start}
+figure img{width:100%;height:auto;display:block;border-radius:12px;border:1px solid var(--line)}
+figcaption{font-size:14px;color:var(--muted);line-height:1.4} figcaption b{color:var(--ink)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.duo4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.tag{font:700 12px var(--mono);letter-spacing:.08em;padding:2px 8px;border-radius:6px;justify-self:start}
+.win{background:var(--good);color:var(--paper)} .lose{border:1px solid var(--line);color:var(--muted)}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:16px 18px;display:grid;gap:8px}
+.card ul{margin:0;padding-left:18px;display:grid;gap:5px}
+.ledger{font:500 14px var(--mono);font-variant-numeric:tabular-nums}
+@media (max-width:760px){.duo{grid-template-columns:1fr}.duo4{grid-template-columns:1fr 1fr}}
+</style>
+<div class="wrap">
+<header style="display:grid;gap:12px">
+ <span class="eyebrow">Wait, That's a Fact? · look test · 10.5 credits spent</span>
+ <h1>The Second Look, in real frames</h1>
+ <p class="lede">The art comes from three Higgsfield generations: Mark's sheet, a hippo scene and a satellite scene. I composed them here with the brand kit, the same way the real edit will work. Judge the direction from these; production quality will be higher (notes at the bottom).</p>
+</header>
+
+<section><h2>Four frames from the new system</h2>
+<div class="frames">
+ <figure><img src="web/frame_A.jpg" alt="Hook frame: a hippo peeking out of a river at sunset with the caption 'A whale's closest living relative is a hippo'"><figcaption><b>Hook, 0–3 s.</b> Full-bleed scene, the claim in huge outlined type, the FACT badge. The whale-shaped reflection is already there for anyone who looks closely.</figcaption></figure>
+ <figure><img src="web/frame_B.jpg" alt="Lens frame: the scene in grey, an orange lens revealing the whale reflection in colour, Mark holding a magnifier"><figcaption><b>The Second-Look Lens.</b> The frame freezes and goes grey, the narrator says "Wait.", and the lens shows the truth in colour. Mark is the one doing the looking. In the edit the lens slides across.</figcaption></figure>
+ <figure><img src="web/frame_C.jpg" alt="Notebook frame: a satellite illustration taped onto graph paper, an index card reading +38 µs every single day, Mark pointing"><figcaption><b>Notebook fact frame.</b> Light graph paper, the art taped in like a case file, the number on an index card, a SOURCE stamp and a highlighter. The art never contains text, so every figure stays accurate.</figcaption></figure>
+ <figure><img src="web/frame_D.jpg" alt="Cover: 'A whale's cousin?' over the hippo scene, with Mark in his exclamation-mark shock pose"><figcaption><b>Cover.</b> Two or three huge words, an orange circle on the evidence, and Mark's "!" double-take as the emotional cue.</figcaption></figure>
+</div></section>
+
+<section><h2>Mark: model comparison</h2>
+<div class="duo">
+ <figure><span class="tag win">PICKED · GPT Image 2.5 · 1.5 cr</span><img src="web/mark_gpt.jpg" alt="GPT Image 2.5 sheet: six poses of Mark with a navy body and a face on the orange question-mark head"><figcaption>On spec: the navy dot body makes the whole silhouette read as "?". There's a face in every pose, and the shock pose turns cleanly into "!". The proportions match across all six poses.</figcaption></figure>
+ <figure><span class="tag lose">Nano Banana Pro · 2 cr</span><img src="web/mark_nbp.jpg" alt="Nano Banana Pro sheet: six poses with an orange body and no face on most poses"><figcaption>Off spec: the body came out orange, so the silhouette no longer reads as "?". Only one pose has a face, which leaves much less to act with.</figcaption></figure>
+</div></section>
+
+<section><h2>Scenes: model comparison</h2>
+<div class="duo4">
+ <figure><span class="tag win">PICKED · GPT</span><img src="web/3_gpt_hippo.jpg" alt="GPT hippo scene"><figcaption>The reflection really is a whale, which is exactly what the lens needs.</figcaption></figure>
+ <figure><span class="tag lose">Nano Banana Pro</span><img src="web/4_nbp_hippo.jpg" alt="Nano Banana Pro hippo scene"><figcaption>The whale is a separate animal under the water, so the reflection idea is lost.</figcaption></figure>
+ <figure><span class="tag win">PICKED · GPT</span><img src="web/5_gpt_sat.jpg" alt="GPT satellite scene"><figcaption>White outlines on navy as specified; the pin and orbit are clear.</figcaption></figure>
+ <figure><span class="tag lose">Nano Banana Pro</span><img src="web/6_nbp_sat.jpg" alt="Nano Banana Pro satellite scene"><figcaption>Also good, but the outlines drift from the spec.</figcaption></figure>
+</div>
+<p style="font-size:15px;color:var(--muted)">None of the six images contains stray text or numbers.</p>
+</section>
+
+<section class="duo">
+ <div class="card"><h2 style="font-size:22px">What production adds</h2><ul>
+  <li>Mark's poses are generated one at a time with transparent backgrounds at full resolution. These cut-outs from the sheet are low-res and a little soft.</li>
+  <li>Scenes are generated at 2K, so the full-bleed shots stay sharp at 1080×1920.</li>
+  <li>One Mark double-take clip ("?" to "!") is animated once and reused in every episode.</li>
+  <li>Everything moves: slow pushes, the lens sliding in, cards dropping in with a tape-rip sound, highlighter wipes.</li></ul></div>
+ <div class="card"><h2 style="font-size:22px">Credit ledger</h2>
+  <div class="ledger">Balance before: 594.6<br>Look test: −10.5 (6 images, quoted before running)<br>Balance now: 584.1<br>Cap for the project: 297.0 · spent 10.5 · left 286.5</div></div>
+</section>
+</div>

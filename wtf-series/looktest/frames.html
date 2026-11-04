@@ -1,0 +1,76 @@
+<!doctype html><html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:BG;src:url(../brand/fonts/BricolageGrotesque-ExtraBold.ttf)}
+@font-face{font-family:CV;src:url(../brand/fonts/Caveat-Bold.ttf)}
+@font-face{font-family:JB;src:url(../brand/fonts/JetBrainsMono-Bold.ttf)}
+body{margin:0;background:#777}
+.f{width:1080px;height:1920px;position:relative;overflow:hidden;margin-bottom:20px}
+.bleed{position:absolute;inset:0;background-size:cover;background-position:center}
+.grain{position:absolute;inset:0;opacity:.13;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E")}
+.badge{position:absolute;top:140px;left:70px;display:flex;gap:14px;align-items:center;font:700 34px JB;letter-spacing:.08em}
+.badge b{background:#FF8C1A;color:#13213C;padding:8px 18px;border-radius:10px;border:4px solid #13213C}
+.badge span{background:#13213C;color:#fff;padding:8px 16px;border-radius:10px}
+.cap{position:absolute;left:70px;right:150px;font:800 100px/1.0 BG;color:#fff;text-transform:uppercase;-webkit-text-stroke:14px #13213C;paint-order:stroke fill;letter-spacing:-.01em}
+.cap em{font-style:normal;color:#FF8C1A}
+.paper{position:absolute;inset:0;background:#F8F9FC;background-image:linear-gradient(#D6E4F3 2px,transparent 2px),linear-gradient(90deg,#D6E4F3 2px,transparent 2px);background-size:54px 54px}
+.margin{position:absolute;top:0;bottom:0;left:92px;width:5px;background:#FF8C1A}
+.tape{position:absolute;width:190px;height:58px;background:rgba(255,214,150,.78);box-shadow:0 2px 0 rgba(0,0,0,.08)}
+.card{position:absolute;background:#fff;border:5px solid #13213C;box-shadow:10px 12px 0 rgba(19,33,60,.18)}
+.stamp{position:absolute;font:700 30px JB;color:#D2461E;border:5px solid #D2461E;padding:6px 16px;letter-spacing:.12em;transform:rotate(-8deg);opacity:.9}
+.hl{background:linear-gradient(transparent 52%,#FFB25E 52%,#FFB25E 92%,transparent 92%)}
+.lensring{position:absolute;border-radius:50%;border:26px solid #FF8C1A;box-shadow:0 0 0 7px #13213C,inset 0 0 0 7px #13213C}
+.lab{position:absolute;font:700 26px JB;color:#fff;background:#13213C;padding:6px 14px;border-radius:8px}
+</style></head><body>
+
+<!-- A: HOOK FRAME (EP02) -->
+<div class="f" id="A">
+ <div class="bleed" style="background-image:url(3_gpt_hippo.png);background-position:50% 18%;background-size:150%"></div>
+ <div class="grain"></div>
+ <div class="badge"><b>FACT 02</b><span>EVOLUTION</span></div>
+ <div class="cap" style="top:1080px">A whale's closest living relative is&nbsp;a <em>hippo</em></div>
+</div>
+
+<!-- B: SECOND-LOOK LENS (EP02 twist) -->
+<div class="f" id="B">
+ <div class="bleed" style="background-image:url(3_gpt_hippo.png);filter:grayscale(1) brightness(.55) contrast(1.1)"></div>
+ <div style="position:absolute;left:250px;top:880px;width:640px;height:640px;border-radius:50%;overflow:hidden">
+   <div style="position:absolute;left:-250px;top:-880px;width:1080px;height:1920px;background:url(3_gpt_hippo.png) center/cover"></div>
+ </div>
+ <div class="lensring" style="left:224px;top:854px;width:640px;height:640px"></div>
+  <img src="mark_lens.png" style="position:absolute;left:40px;top:1330px;height:500px;transform:scaleX(-1)">
+ <div class="grain"></div>
+ <div class="badge"><b>FACT 02</b><span>EVOLUTION</span></div>
+ <div class="cap" style="top:300px;font-size:190px">Wait.</div>
+ <div style="position:absolute;top:520px;left:74px;font:700 64px CV;color:#FFB25E">look again…</div>
+</div>
+
+<!-- C: NOTEBOOK FACT FRAME (EP01) -->
+<div class="f" id="C">
+ <div class="paper"></div><div class="margin"></div>
+ <div class="card" style="left:150px;top:250px;width:640px;height:820px;transform:rotate(-2.5deg);overflow:hidden;padding:0">
+   <div style="position:absolute;inset:0;background:url(5_gpt_sat.png) 50% 40%/cover"></div></div>
+ <div class="tape" style="left:370px;top:220px;transform:rotate(-6deg)"></div>
+ <div class="card" style="left:520px;top:960px;width:470px;height:330px;transform:rotate(3deg);padding:28px 30px;box-sizing:border-box">
+   <div style="font:700 26px JB;color:#6F84A8;letter-spacing:.1em">SATELLITE CLOCK</div>
+   <div style="font:700 120px/1.05 JB;color:#13213C">+38<span style="font-size:60px">µs</span></div>
+   <div style="font:800 44px BG;color:#13213C"><span class="hl">every single day</span></div>
+ </div>
+ <div class="tape" style="left:690px;top:935px;width:150px;transform:rotate(8deg)"></div>
+ <div class="stamp" style="left:560px;top:1330px">SOURCE · ASHBY 2002</div>
+ <img src="mark_point.png" style="position:absolute;left:110px;top:1060px;height:440px">
+ <svg style="position:absolute;left:0;top:0" width="1080" height="1920"><path d="M760 900 C 840 860 900 900 930 950" fill="none" stroke="#FF8C1A" stroke-width="9" stroke-linecap="round"/><path d="M905 925 L932 955 L940 915" fill="none" stroke="#FF8C1A" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+ <div class="badge" style="top:120px"><b>FACT 01</b><span>TECH</span></div>
+ <div class="cap" style="top:1530px;font-size:84px;color:#13213C;-webkit-text-stroke:0">That's <em style="background:#13213C;padding:0 12px;border-radius:10px;white-space:nowrap">10+ km</em> of error. Per day.</div>
+ <div class="grain" style="opacity:.08"></div>
+</div>
+
+<!-- D: COVER (EP02) -->
+<div class="f" id="D">
+ <div class="bleed" style="background-image:url(3_gpt_hippo.png)"></div>
+ <div class="grain"></div>
+ <div class="cap" style="top:220px;font-size:150px;line-height:.95">A whale's<br><em>cousin?</em></div>
+ <img src="mark_shock.png" style="position:absolute;right:40px;top:1080px;height:560px">
+ <svg style="position:absolute;left:0;top:0" width="1080" height="1920"><ellipse cx="500" cy="1270" rx="300" ry="360" fill="none" stroke="#FF8C1A" stroke-width="14" stroke-dasharray="6 0" transform="rotate(-6 500 1270)"/></svg>
+ <div class="badge" style="top:110px"><b>FACT 02</b><span>EVOLUTION</span></div>
+</div>
+</body></html>
