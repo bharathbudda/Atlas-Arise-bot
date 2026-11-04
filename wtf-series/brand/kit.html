@@ -1,0 +1,124 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>WTF brand kit render sheet</title>
+<style>
+@font-face{font-family:BG;src:url(fonts/BricolageGrotesque-ExtraBold.ttf);font-weight:800}
+@font-face{font-family:BGM;src:url(fonts/BricolageGrotesque-Medium.ttf);font-weight:500}
+@font-face{font-family:CV;src:url(fonts/Caveat-Bold.ttf);font-weight:700}
+@font-face{font-family:JB;src:url(fonts/JetBrainsMono-Bold.ttf);font-weight:700}
+:root{--navy:#13213C;--grid:#1E3157;--orange:#FF8C1A;--white:#FFFFFF;--chalk:#DCE6F2;--slate:#6F84A8}
+body{margin:0;background:#888}
+.f{width:1080px;height:1920px;position:relative;overflow:hidden;background:var(--navy);margin:0 0 20px}
+.grid{position:absolute;inset:0;background-image:linear-gradient(var(--grid) 2px,transparent 2px),linear-gradient(90deg,var(--grid) 2px,transparent 2px);background-size:60px 60px;opacity:.55}
+.margin{position:absolute;top:0;bottom:0;left:96px;width:4px;background:var(--orange);opacity:.55}
+.grain{position:absolute;inset:0;opacity:.10;mix-blend-mode:screen;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E")}
+.vig{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 45%,transparent 55%,rgba(5,10,22,.55))}
+.badge{position:absolute;top:150px;left:130px;display:flex;align-items:center;gap:16px;font:700 34px JB;letter-spacing:.08em;color:var(--white)}
+.badge b{background:var(--orange);color:var(--navy);padding:8px 18px;border-radius:10px}
+.badge span{color:var(--chalk);opacity:.85}
+.cap{position:absolute;left:110px;right:150px;top:1180px;font:800 92px/1.02 BG;color:var(--white);text-transform:uppercase;letter-spacing:-.01em;text-shadow:0 6px 0 rgba(0,0,0,.35)}
+.cap em{font-style:normal;color:var(--navy);background:var(--orange);padding:0 14px;border-radius:12px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.note{font:700 64px CV;color:var(--orange)}
+.src{position:absolute;left:130px;bottom:470px;font:700 26px JB;color:var(--chalk);opacity:.75;letter-spacing:.04em}
+.safe{position:absolute;inset:0;pointer-events:none}
+.safe i{position:absolute;border:3px dashed rgba(255,80,80,.9)}
+.sq{width:1024px;height:1024px;position:relative;margin:0 0 20px;background:transparent}
+</style></head><body>
+
+<!-- 1. LOGO MARK (transparent) -->
+<div class="sq" id="logo">
+<svg viewBox="0 0 1024 1024" width="1024" height="1024">
+  <circle cx="512" cy="512" r="500" fill="#13213C"/>
+  <circle cx="512" cy="512" r="470" fill="none" stroke="#FF8C1A" stroke-width="10" stroke-dasharray="4 26" stroke-linecap="round" opacity=".7"/>
+  <!-- question hook (orange) -->
+  <path d="M330 390 C330 250 430 190 525 190 C640 190 712 262 712 360 C712 450 650 492 590 528 C552 551 538 572 538 590" fill="none" stroke="#FF8C1A" stroke-width="96" stroke-linecap="round"/>
+  <!-- exclamation (white): stem + dot, hidden inside the '?' -->
+  <rect x="490" y="540" width="96" height="190" rx="48" fill="#FFFFFF"/>
+  <circle cx="538" cy="840" r="58" fill="#FFFFFF"/>
+</svg></div>
+
+<!-- 2. BACKGROUND PLATE -->
+<div class="f" id="bg"><div class="grid"></div><div class="margin"></div><div class="grain"></div><div class="vig"></div></div>
+
+<!-- 3. HOOK FRAME MOCKUP (EP01) -->
+<div class="f" id="hook"><div class="grid"></div><div class="margin"></div><div class="grain"></div>
+<svg viewBox="0 0 1080 1920" width="1080" height="1920" style="position:absolute;inset:0">
+  <g transform="translate(540 760)">
+    <circle r="250" fill="#1E3157" stroke="#FFFFFF" stroke-width="7"/>
+    <path d="M-180 -110 C-120 -150 -60 -90 -10 -120 C40 -150 90 -100 150 -130 L170 -60 C110 -40 60 -80 0 -50 C-60 -20 -120 -70 -200 -40Z" fill="#FF8C1A" opacity=".9"/>
+    <path d="M-210 60 C-150 30 -90 90 -30 60 C30 30 80 90 140 60 C170 45 200 50 225 60 L215 120 C150 100 100 140 30 120 C-40 100 -110 150 -190 120Z" fill="#FF8C1A" opacity=".9"/>
+    <ellipse rx="390" ry="120" fill="none" stroke="#DCE6F2" stroke-width="4" stroke-dasharray="14 16" transform="rotate(-18)"/>
+    <g transform="translate(330 -230) rotate(-18)">
+      <rect x="-40" y="-30" width="80" height="60" rx="8" fill="#FFFFFF"/>
+      <rect x="-150" y="-20" width="95" height="40" fill="#FF8C1A" stroke="#FFFFFF" stroke-width="5"/>
+      <rect x="55" y="-20" width="95" height="40" fill="#FF8C1A" stroke="#FFFFFF" stroke-width="5"/>
+    </g>
+    <path d="M300 -180 L60 -10" stroke="#FFFFFF" stroke-width="5" stroke-dasharray="6 14" stroke-linecap="round"/>
+    <circle cx="40" cy="5" r="22" fill="#FF8C1A" stroke="#FFFFFF" stroke-width="6"/>
+  </g>
+</svg>
+<div class="badge"><b>FACT 01</b><span>TECH</span></div>
+<div class="cap">Your map works because <em>Einstein</em> was right</div>
+</div>
+
+<!-- 4. DIAGRAM FRAME MOCKUP (local, numbers exact) -->
+<div class="f" id="diagram"><div class="grid"></div><div class="margin"></div><div class="grain"></div>
+<div class="badge"><b>FACT 01</b><span>TECH</span></div>
+<svg viewBox="0 0 1080 1920" width="1080" height="1920" style="position:absolute;inset:0;font-family:JB">
+  <text x="140" y="300" font-family="CV" font-size="72" fill="#FF8C1A">satellite clock, per day</text>
+  <line x1="140" y1="900" x2="960" y2="900" stroke="#DCE6F2" stroke-width="4"/>
+  <rect x="190" y="420" width="190" height="480" fill="#FF8C1A"/>
+  <text x="285" y="400" text-anchor="middle" font-size="52" font-weight="700" fill="#FFFFFF">+45</text>
+  <text x="285" y="970" text-anchor="middle" font-size="30" fill="#DCE6F2">GRAVITY</text>
+  <rect x="445" y="900" width="190" height="75" fill="#6F84A8"/>
+  <text x="540" y="1040" text-anchor="middle" font-size="52" font-weight="700" fill="#FFFFFF">−7</text>
+  <text x="540" y="880" text-anchor="middle" font-size="30" fill="#DCE6F2">SPEED</text>
+  <rect x="700" y="495" width="190" height="405" fill="none" stroke="#FFFFFF" stroke-width="7" stroke-dasharray="18 10"/>
+  <text x="795" y="475" text-anchor="middle" font-size="52" font-weight="700" fill="#FF8C1A">+38</text>
+  <text x="795" y="970" text-anchor="middle" font-size="30" fill="#DCE6F2">NET</text>
+  <text x="540" y="1110" text-anchor="middle" font-size="34" fill="#DCE6F2">microseconds</text>
+</svg>
+<div class="cap" style="top:1210px"><span style="text-transform:none;font-family:JB">38&#8239;µs</span> × light speed ≈ <em>11 km</em></div>
+<div class="src">SOURCE · ASHBY, PHYSICS TODAY 2002</div>
+</div>
+
+<!-- 5. END CARD -->
+<div class="f" id="endcard"><div class="grid"></div><div class="margin"></div><div class="grain"></div><div class="vig"></div>
+<svg viewBox="0 0 1024 1024" width="520" height="520" style="position:absolute;left:280px;top:430px">
+  <path d="M330 390 C330 250 430 190 525 190 C640 190 712 262 712 360 C712 450 650 492 590 528 C552 551 538 572 538 590" fill="none" stroke="#FF8C1A" stroke-width="96" stroke-linecap="round"/>
+  <rect x="490" y="540" width="96" height="190" rx="48" fill="#FFFFFF"/><circle cx="538" cy="840" r="58" fill="#FFFFFF"/>
+</svg>
+<div style="position:absolute;top:1000px;left:0;right:0;text-align:center;font:800 104px/1 BG;color:#fff;letter-spacing:-.01em">WAIT…</div>
+<div style="position:absolute;top:1115px;left:0;right:0;text-align:center;font:800 104px/1 BG;color:#FF8C1A">THAT'S A FACT.</div>
+<div style="position:absolute;top:1270px;left:0;right:0;text-align:center;font:700 60px CV;color:#DCE6F2">one minute · one fact · every day</div>
+</div>
+
+<!-- 6. COVER / THUMBNAIL MOCKUP -->
+<div class="f" id="cover"><div class="grid"></div><div class="margin"></div><div class="grain"></div>
+<svg viewBox="0 0 1080 1920" width="1080" height="1920" style="position:absolute;inset:0">
+  <g transform="translate(540 1180) scale(1.25)">
+    <ellipse cx="-150" cy="40" rx="190" ry="110" fill="#6F84A8" stroke="#fff" stroke-width="7"/>
+    <circle cx="-260" cy="-30" r="70" fill="#6F84A8" stroke="#fff" stroke-width="7"/>
+    <circle cx="-280" cy="-50" r="10" fill="#fff"/>
+    <path d="M60 60 C120 -60 260 -80 330 0 C300 20 300 70 330 100 C250 150 120 140 60 60Z" fill="#1E3157" stroke="#fff" stroke-width="7"/>
+    <path d="M330 0 L400 -50 L390 50 L400 150 L330 100" fill="#1E3157" stroke="#fff" stroke-width="7" stroke-linejoin="round"/>
+    <path d="M-20 0 C10 -40 30 -40 50 0" fill="none" stroke="#FF8C1A" stroke-width="10" stroke-linecap="round"/>
+    <text x="-5" y="-60" font-family="CV" font-size="80" fill="#FF8C1A" text-anchor="middle">=</text>
+  </g>
+</svg>
+<div style="position:absolute;top:300px;left:110px;right:110px;font:800 150px/.95 BG;color:#fff;text-transform:uppercase">A whale's cousin is a <span style="color:#FF8C1A">hippo</span></div>
+<div class="badge" style="top:150px"><b>FACT 02</b><span>EVOLUTION</span></div>
+</div>
+
+<!-- 7. CAPTION STYLE + SAFE ZONES -->
+<div class="f" id="safe"><div class="grid"></div><div class="margin"></div><div class="grain"></div>
+<div class="badge"><b>FACT 04</b><span>BIOLOGY</span></div>
+<div class="cap">You are <em>not</em> 90% bacteria</div>
+<div style="position:absolute;left:130px;top:1420px" class="note">↑ key word = orange block</div>
+<div class="safe">
+ <i style="left:0;right:0;bottom:0;height:420px"></i>
+ <i style="right:0;top:700px;width:150px;height:800px"></i>
+ <i style="left:0;right:0;top:0;height:120px"></i>
+</div>
+<div style="position:absolute;bottom:180px;left:60px;font:700 30px JB;color:#ff8080">KEEP CLEAR · Shorts/Reels UI (title, buttons)</div>
+</div>
+</body></html>
