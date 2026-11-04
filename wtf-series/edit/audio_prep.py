@@ -38,7 +38,7 @@ def prep(ep, tempo=None):
         is_wait = txt.strip().startswith("Wait")
         if is_wait and k > 0: t += WAIT_PAD
         dd = dur(str(f)); timing.append({"i": i + 1, "start": round(t, 3), "end": round(t + dd, 3), "text": txt})
-        parts.append((f, t)); t += dd + GAP + (WAIT_PAD if is_wait else 0)
+        parts.append((f, t)); t += dd + GAP + ((1.05 if len(txt) < 20 else WAIT_PAD) if is_wait else 0)
     total = round(timing[-1]["end"] + TAIL, 3)
     inputs = []; filt = []
     for k, (f, st) in enumerate(parts):

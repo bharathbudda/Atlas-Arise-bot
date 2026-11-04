@@ -96,9 +96,9 @@ const CARDS={
   return `<svg width="860" height="960">${s}</svg>`},
  ankle(c,p){
   let s=`<text class="ch" x="60" y="110">ankle bone, two pulleys</text>`;
-  s+=draw('M250 300 C 250 220 610 220 610 300 L 640 640 C 640 760 220 760 220 640 Z',lin(p,0,0.4));
-  s+=`<path d="M 300 290 C 320 200 400 200 420 290" fill="none" stroke="#FF8C1A" stroke-width="22" stroke-linecap="round" opacity="${lin(p,0.4,0.55)}"/><path d="M 300 720 C 320 800 400 800 420 720" fill="none" stroke="#FF8C1A" stroke-width="22" stroke-linecap="round" opacity="${lin(p,0.55,0.7)}"/>`;
-  s+=`<text class="ct" x="560" y="470" font-size="30" opacity="${lin(p,0.6,0.75)}">top pulley</text><text class="ct" x="560" y="820" font-size="30" opacity="${lin(p,0.7,0.85)}">bottom pulley</text>`;
+  s+=draw('M230 230 C 330 300 530 300 630 230 L 560 500 L 630 770 C 530 700 330 700 230 770 L 300 500 Z',lin(p,0,0.4));
+  s+=`<path d="M 300 262 C 380 330 480 330 560 262" fill="none" stroke="#FF8C1A" stroke-width="22" stroke-linecap="round" opacity="${lin(p,0.4,0.55)}"/><path d="M 300 738 C 380 670 480 670 560 738" fill="none" stroke="#FF8C1A" stroke-width="22" stroke-linecap="round" opacity="${lin(p,0.55,0.7)}"/>`;
+  s+=`<text class="ct" x="640" y="300" font-size="30" opacity="${lin(p,0.6,0.75)}">pulley 1</text><text class="ct" x="640" y="760" font-size="30" opacity="${lin(p,0.7,0.85)}">pulley 2</text>`;
   s+=`<text x="60" y="900" font-family="JB" font-size="26" fill="#6F84A8" opacity="${lin(p,0.75,0.9)}">simplified · even-toed hoofed mammals</text>`;
   return `<svg width="860" height="960">${s}</svg>`},
  wave(c,p){ // {ratio:[a,b], label}
@@ -215,7 +215,7 @@ window.render=async function(t){
   const L=s.lens;const lensOn=L&&t>=s.t0+0.18;
   $('lens').style.display=$('lensring').style.display=lensOn?'block':'none';
   if(lensOn){
-    const k=back(lin(t,s.t0+0.18,s.t0+1.0));const R=L.r||320;
+    const k=back(lin(t,s.t0+0.15,s.t0+0.7));const R=L.r||320;
     const cx=1350+(L.cx-1350)*k, cy=2150+(L.cy-2150)*k; const Lf=cx-R,Tp=cy-R;
     for(const el of [$('lens'),$('lensring')]){el.style.left=Lf+'px';el.style.top=Tp+'px';el.style.width=2*R+'px';el.style.height=2*R+'px'}
     $('lensring').style.left=(Lf-26)+'px';$('lensring').style.top=(Tp-26)+'px';
