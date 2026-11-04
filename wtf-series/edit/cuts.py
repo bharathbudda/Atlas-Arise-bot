@@ -36,7 +36,7 @@ def recap():
     font = ED.parent / "brand" / "fonts" / "BricolageGrotesque-ExtraBold.ttf"
     out = OUT / "recap_3facts.mp4"
     subprocess.run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", str(lst),
-                    "-vf", f"drawtext=fontfile={font}:text='3 FACTS · 30 SECONDS':fontsize=64:fontcolor=white:borderw=8:bordercolor=0x13213C:x=(w-tw)/2:y=1560:enable='lt(t,2.5)'",
+                    "-vf", f"drawtext=fontfile={font}:text='3 FACTS · 3 TWISTS':fontsize=64:fontcolor=white:borderw=8:bordercolor=0x13213C:x=(w-tw)/2:y=1560:enable='lt(t,2.5)'",
                     "-c:v", "libx264", "-crf", "18", "-preset", "medium", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "320k", "-movflags", "+faststart", str(out)], check=True)
     dur = subprocess.check_output(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(out)]).decode().strip()
     print(out.name, dur)

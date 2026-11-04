@@ -246,7 +246,7 @@ window.render=async function(t){
   // captions
   const cap=$('cap');let c=null;for(const x of TL.caps){if(t>=x.t0&&t<x.t1)c=x}
   if(c){cap.style.display='block';cap.innerHTML=c.html.replace(/µs/g,'<span style="text-transform:none">µs</span>');cap.className='cap'+((isCard||c.dark)?' dark':'');
-    cap.style.top=(c.top||(isCard?1350:1150))+'px';cap.style.fontSize=(c.size||100)+'px';
+    cap.style.top=(c.top||(isCard?1350:1150))+'px';const plain=c.html.replace(/<[^>]+>/g,'');cap.style.fontSize=(c.size||(plain.length>21?82:100))+'px';
     const k=back(lin(t,c.t0,c.t0+0.12));cap.style.transform=`scale(${0.92+0.08*k})`;} else cap.style.display='none';
   // flash on loop cut
   $('flash').style.opacity=TL.flash&&t>TL.total-0.12?lin(t,TL.total-0.12,TL.total)*0.0:0;

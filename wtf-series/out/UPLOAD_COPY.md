@@ -64,3 +64,11 @@ Narration and visuals AI-generated. Facts checked against the sources above.
 
 ---
 **Quiz and recap days (3, 6, 9, 10)** reuse footage from the episodes. See `cuts/`.
+
+## Extra posts (no credits used)
+| Day | File | Title | Description |
+|---|---|---|---|
+| 3 | `cuts/quiz_day03_whale.mp4` | Quiz: what's a whale's closest living relative? 🐋 #shorts | Shark, seal or hippo? Comment your answer. It's revealed tomorrow. Visuals AI-generated. |
+| 6 | `cuts/quiz_day06_windows.mp4` | Quiz: why are plane windows rounded? ✈️ #shorts | Looks, cleaning or metal fatigue? The real story drops tomorrow. Visuals AI-generated. |
+| 9 | `cuts/quiz_day09_bacteria.mp4` | True or false: you're 90% bacteria 🦠 #shorts | Answer: false. It's about 1.3 bacteria per human cell (Sender et al., 2016). Visuals AI-generated. |
+| 10 | `cuts/recap_3facts.mp4` | 3 facts, 3 twists: whales, GPS and plane windows #shorts | The best "Wait." moments from this week. Narration and visuals AI-generated. |

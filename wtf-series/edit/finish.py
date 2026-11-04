@@ -35,10 +35,10 @@ def mix(ep):
     filt.append("".join(labels) + f"amix=inputs={len(labels)}:normalize=0,apad=whole_dur={total},atrim=0:{total}[pre]")
     run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", *inputs, "-filter_complex", ";".join(filt), "-map", "[pre]", "-ac", "2", "-ar", "48000", str(d / "pre.wav")])
     # two-pass loudness: measure, then gain + true-peak limiter to -14 LUFS / -1 dBTP
-    m = subprocess.run(["ffmpeg", "-hide_banner", "-i", str(d / "pre.wav"), "-af", "loudnorm=I=-14:TP=-1.5:LRA=11:print_format=json", "-f", "null", "-"], capture_output=True, text=True).stderr
+    m = subprocess.run(["ffmpeg", "-hide_banner", "-i", str(d / "pre.wav"), "-af", "loudnorm=I=-14:TP=-2:LRA=11:print_format=json", "-f", "null", "-"], capture_output=True, text=True).stderr
     js = json.loads(m[m.rindex("{"):m.rindex("}") + 1])
-    af = (f"loudnorm=I=-14:TP=-1.5:LRA=11:measured_I={js['input_i']}:measured_TP={js['input_tp']}:measured_LRA={js['input_lra']}:"
-          f"measured_thresh={js['input_thresh']}:offset={js['target_offset']}:linear=true,alimiter=limit=0.84:level=disabled,aresample=48000")
+    af = (f"loudnorm=I=-14:TP=-2:LRA=11:measured_I={js['input_i']}:measured_TP={js['input_tp']}:measured_LRA={js['input_lra']}:"
+          f"measured_thresh={js['input_thresh']}:offset={js['target_offset']}:linear=true,alimiter=limit=0.76:level=disabled,aresample=48000")
     run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", str(d / "pre.wav"), "-af", af, str(d / "mix.wav")])
 
 def encode(ep, title):
@@ -55,6 +55,8 @@ def encode(ep, title):
 
 TITLES = {"ep01": "GPS_Einstein", "ep02": "Whale_Hippo", "ep03": "Twelve_Notes", "ep04": "Bacteria_Myth", "ep05": "OK_Joke", "ep06": "Plane_Windows"}
 if __name__ == "__main__":
-    for ep in sys.argv[1:]:
-        n = render(ep); print(ep, "frames", n, flush=True)
+    args = sys.argv[1:]; audio_only = "--audio-only" in args
+    for ep in [a for a in args if not a.startswith("--")]:
+        if not audio_only:
+            n = render(ep); print(ep, "frames", n, flush=True)
         mix(ep); encode(ep, TITLES[ep])
