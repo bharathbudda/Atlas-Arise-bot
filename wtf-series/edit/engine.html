@@ -160,7 +160,7 @@ const CARDS={
   <rect x="490" y="250" width="260" height="360" rx="${110}" fill="#9CC3E6" stroke="#13213C" stroke-width="10" pathLength="1" stroke-dasharray="1" stroke-dashoffset="${1-lin(p,0.3,0.65)}"/>
   <text class="ct" x="240" y="680" text-anchor="middle" opacity="${lin(p,0.3,0.4)}">COMET 1</text><text class="ct" x="240" y="725" text-anchor="middle" font-size="26" fill="#6F84A8" opacity="${lin(p,0.3,0.4)}">tightly rounded</text>
   <text class="ct" x="620" y="680" text-anchor="middle" opacity="${lin(p,0.6,0.7)}">TODAY</text><text class="ct" x="620" y="725" text-anchor="middle" font-size="26" fill="#6F84A8" opacity="${lin(p,0.6,0.7)}">generously rounded</text>
-  <text class="ct" x="60" y="900" font-size="24" fill="#D2461E">SOURCE · COHEN INQUIRY 1955</text></svg>`},
+  <text class="ct" x="60" y="900" font-size="24" fill="#D2461E">SOURCE · COHEN REPORT, HMSO 1955</text></svg>`},
  keys(c,p){ // 12-key strip lighting in sequence
   const white=[0,2,4,5,7,9,11],blackPos={1:0,3:1,6:3,8:4,10:5};let s='';const wk=100,x0=80;const lit=Math.floor(lin(p,0.1,0.9)*12.99);
   white.forEach((n,i)=>{s+=`<rect x="${x0+i*wk}" y="250" width="${wk}" height="460" fill="${n<lit?'#FFB25E':'#fff'}" stroke="#13213C" stroke-width="6"/>`});

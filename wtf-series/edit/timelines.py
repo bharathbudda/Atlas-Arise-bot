@@ -30,8 +30,8 @@ def chunks(text):
 DISPLAY = [("twenty thousand kilometres","20,000 km"),("forty-five microseconds","45 µs"),("four kilometres a second","4 km a second"),
  ("seven microseconds","7 µs"),("thirty-eight microseconds","38 µs"),("ten kilometres","10 km"),("fifty million","50 million"),
  ("twenty-two shrutis","22 shrutis"),("five or seven tones","5 or 7 tones"),("seven octaves","7 octaves"),("thirty-eight trillion","38 trillion"),
- ("thirty trillion","30 trillion"),("eighty-four percent","84%"),("one point three to one","1.3 to 1"),("ten to one","10 to 1"),
- ("two hundred grams","200 grams"),("Ten microbes","10 microbes"),("forty years","40 years"),("twenty-third of March, 1839","23 March 1839")]
+ ("thirty trillion","30 trillion"),("eighty-four percent","84%"),
+ ("two hundred grams","200 grams"),("Ten microbes","10 microbes"),("forty years","40 years"),("the twenty-third of March, 1839","23\u00a0March\u00a01839"),("one point three to one","1.3\u00a0to\u00a01"),("ten to one","10\u00a0to\u00a01"),("O.K. Clubs","O.K.\u00a0Clubs"),("the Pythagorean comma","the Pythagorean\u00a0comma")]
 def display(t):
     for a, b in DISPLAY: t = t.replace(a, b)
     t = re.sub(r"(\d) (km|µs|million|trillion|grams|or|to|March)\b", lambda m: m.group(1) + "\u00a0" + m.group(2), t)
@@ -138,7 +138,7 @@ def ep04():
     mark = [{"t0": at(L,2,.45), "t1": at(L,3), "pose":"facepalm","x":680,"y":1390,"h":400,"enter":"pop"},
             flipmark(at(L,5), at(L,5,.5)),
             {"t0": at(L,7,.25), "t1": tm["total"], "pose":"thumbs","x":680,"y":1400,"h":400,"enter":"pop"}]
-    anchor = {"label":"BACTERIA vs YOU","hideOnCard":True,"values":[[at(L,3,.45),"38 T vs 30 T"],[at(L,6,.7),"you, briefly ahead"]]}
+    anchor = {"label":"BACTERIA vs YOU","hideOnCard":True,"values":[[at(L,3,.45),"38 trillion vs 30 trillion"],[at(L,6,.7),"toilet trip: can tip to you"]]}
     caps = caps_for(L, ["bacteria","10","1972","40 years","38 trillion","30 trillion","red blood cells","1.3","tiny","200 grams","mango","toilet","tie","overwhelmingly you"], big={})
     for c in caps:  # the Wait line here is long: put its first chunk up top
         if c["html"].startswith("Wait"): c["top"] = 280; c["size"] = 150
@@ -157,7 +157,7 @@ def ep05():
              card("newspaper", at(L,3), at(L,4)),
              still("ep05_I4", at(L,4), at(L,5)),
              still("ep05_I5", at(L,5), at(L,5,.42)), still("ep05_I6", at(L,5,.42), at(L,5,.75)),
-             card("bignum", at(L,5,.75), at(L,6), label="1840 · CAMPAIGN SLOGAN", num="O.K.", size=200, sub="O.K. Clubs"),
+             card("bignum", at(L,5,.75), at(L,6), label="1840 · RE-ELECTION CAMPAIGN", num="O.K.", size=200, sub="O.K. Clubs"),
              card("scoreboard", at(L,6), at(L,7), title="1840 result", rows=[["Van Buren","lost",False],["OK","won",True]]),
              freeze(f"{M}/ep05_I2.jpg", at(L,7), at(L,7,.32), {"cx":560,"cy":1150,"r":320,"html":news}),
              still("ep05_I7", at(L,7,.32), at(L,8)),
@@ -186,7 +186,7 @@ def ep06():
              still("ep06_I9", at(L,7), tm["total"])]
     mark = [flipmark(at(L,4), at(L,5,.05)),
             {"t0": at(L,7,.35), "t1": tm["total"], "pose":"point","x":40,"y":1410,"h":380,"enter":"slide"}]
-    anchor = {"label":"FLIGHT CYCLES","hideOnCard":True,"values":[[at(L,6,.78),"≈ 1,000"]]}
+    anchor = {"label":"FLIGHT CYCLES","hideOnCard":True,"values":[[at(L,6,.78),"≈ 900–1,300"]]}
     caps = caps_for(L, ["half right","Comets","first jet airliners","water tank","split open","rounded corners","tightly","antenna window","swells","tight corners","thousand","fatigue"], big={4:280})
     return dict(badge=["FACT 06","ENGINEERING"], shots=shots, mark=mark, anchor=anchor, caps=caps, total=tm["total"])
 
