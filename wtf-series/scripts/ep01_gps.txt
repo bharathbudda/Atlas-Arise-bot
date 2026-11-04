@@ -1,7 +1,7 @@
-Your phone's map only works because Einstein was right.
+Your phone's blue dot depends on Einstein being right.
 GPS is a timing machine. Satellites twenty thousand kilometres up broadcast the exact time, and your phone works out where you are from how long each signal took to arrive.
 Up there, gravity is weaker, and relativity says clocks run faster in weaker gravity. About forty-five microseconds a day faster.
 But the satellites also move at nearly four kilometres a second, and moving clocks run slow. About seven microseconds slower.
 Net result: thirty-eight microseconds fast, every day. Sounds tiny. But the signals travel at the speed of light, so that drift is worth more than ten kilometres of error. Per day.
 So engineers tune the clocks to tick slightly slow before launch.
-Every time the blue dot finds you, relativity quietly passes another test.
+Every time that dot finds you, relativity quietly passes another test.

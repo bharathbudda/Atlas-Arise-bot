@@ -1,6 +1,6 @@
 You've probably heard plane windows are round because square ones made jets crash. That's only half right.
 In 1954, two de Havilland Comets, the world's first jet airliners, broke apart in mid-air, less than three months apart.
 Investigators sank an entire Comet fuselage in a giant water tank and pressurised it again and again, flight after simulated flight, until it split open.
-Here's the twist. The Comet's passenger windows already had rounded corners. The inquiry traced the first break-up to a fatigue crack at the corner of a small antenna window in the roof.
-Every flight, the cabin swells slightly, then relaxes. Stress flows around every hole in the skin and piles up at tight corners. Thousands of cycles later, the metal cracks.
+Here's the twist. The Comet's passenger windows already had rounded corners, just tightly rounded. The inquiry found the first break-up most likely began at the corner of a small antenna window in the roof.
+Every flight, the cabin swells slightly, then relaxes. Stress flows around every hole in the skin and piles up at tight corners. After about a thousand flights, the metal cracked.
 So the real lesson wasn't just "make windows round". It was: design every opening for fatigue.

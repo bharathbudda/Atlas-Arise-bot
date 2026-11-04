@@ -148,6 +148,7 @@ EPS = [
    ("Fundamental cause: stresses around the corners of windows and other cut-outs were too high for a long fatigue life.", "Cohen report, para 79"),
    ("The G-ALYU water-tank test failed at a window corner after the equivalent of about 3,060 flights (1,230 real + 1,830 tank cycles).", "Cohen report"),
    ("The Comet 1 passenger windows were rectangular with rounded corners.", "Cohen report; FAA Lessons Learned"),
+   ("G-ALYP had made about 1,290 pressurised flights and G-ALYY about 900 before breaking up.", "Cohen report; FAA Lessons Learned"),
   ],
   avoid=["Do not say 'square passenger windows cracked'.", "Say bolt hole, not rivet hole.", "Do not blame punch-riveting (a later, disputed claim)."],
   sources=["https://www.faa.gov/sites/faa.gov/files/2022-10/G-ALYP_Report_0.pdf", "https://www.faa.gov/lessonslearned/transport_airplane/accidents/G-ALYV"],
@@ -164,19 +165,22 @@ EPS = [
   ]),
 ]
 
+from shots_v2 import SHOTS
+for _ep in EPS: _ep['shots'] = SHOTS[_ep['n']]
+
 # ---------------------------------------------------------------- budget (credits; quotes from Higgsfield get_cost, 04 Nov 2026)
 BUDGET = [
  ("P0", "Style lock: 2 test subjects × (GPT Image 2.5 high 1K ×2 @1.5 + Nano Banana Pro 2K ×2 @2.0)", 14.0),
- ("P0", "Motion test: same start frame on Seedance 2.0 Mini 720p 5s @5.0 and Kling 3.0 Pro 5s silent @8.75", 13.75),
- ("P0", "Voice test: Ainsley sign-off line (ElevenLabs v4, ~0.23) ×2", 0.5),
+ ("P0", "Motion test: the same start frame on Seedance 2.0 Mini 720p 5 s @5.0 and Kling 3.0 Pro 5 s silent @8.75", 13.75),
+ ("P0", "Voice test: Ainsley sign-off line, ElevenLabs v4 (0.23) ×2", 0.46),
  ("P0", "Brand music bed: ElevenLabs Music v2.5, 60 s instrumental, 2 takes @8.72", 17.44),
- ("P1", "Stills: 6 eps × 8 (incl. clip start frames), priced at the dearer model (Nano Banana Pro 2K @2.0)", 96.0),
- ("P2", "Hero clips: 6 eps × 2, Seedance 2.0 Mini 720p 5s silent @5.0", 60.0),
- ("P3", "Voiceover: Ainsley, ElevenLabs v4, ~840 chars per ep ≈ 4.1 + paragraph-split overhead ≈ 5 each", 30.0),
+ ("P1", "Images: 49 (37 stills + 12 clip start frames), priced at the dearer model, Nano Banana Pro 2K @2.0", 98.0),
+ ("P2", "Hero clips: 12 (2 per episode), Seedance 2.0 Mini 720p 5 s silent @5.0", 60.0),
+ ("P3", "Voiceover: Ainsley, ElevenLabs v4, read by paragraph. Quoted 0.69 for 125 chars and 3.22 for 700 chars, so about 5 per episode", 30.0),
 ]
 CAP = 297.0  # half of 594.6
 
-def words(t): return len(re.findall(r"[\w’'.-]+", t))
+def words(t): return len(t.split())
 
 def load_script(slug, n):
     return (SCRIPTS / f"ep{n}_{slug}.txt").read_text().strip()
@@ -214,7 +218,7 @@ def ep_html(ep):
 <section class="ep" id="ep{ep['n']}">
  <header class="ephead"><span class="pill">FACT {ep['n']}</span><span class="cat">{ep['cat']}</span>
   <h3>{e(ep['title'])}</h3>
-  <p class="meta">{w} words · about {w/WPM*60:.0f} s at {WPM} wpm · {stills} AI stills + {clips} AI clips + local diagrams · idea source: {e(ep['src_site'])}</p></header>
+  <p class="meta">{w} words · about {w/WPM*60:.0f} s at {WPM} wpm · {stills + clips} AI images ({clips} of them animated into clips) + local diagrams · idea source: {e(ep['src_site'])}</p></header>
  <div class="epgrid">
   <div class="script"><h4>Script (Ainsley)</h4>{paras}<p class="sign">{SIGNOFF}</p></div>
   <div class="check"><h4>Fact check: verified</h4><ul>{facts}</ul><h4>Must not say</h4><ul class="avoid">{avoid}</ul><p class="links">Sources: {links}</p></div>
@@ -299,7 +303,7 @@ nav.jump{{display:flex;gap:8px;flex-wrap:wrap;align-items:center}} nav.jump a{{f
 <section class="approve" aria-labelledby="ap"><h2 id="ap">What happens when you approve</h2>
 <ol>
  <li><b>P0 · Lock the look (≈46 cr).</b> I generate two style-test subjects on two image models, one motion test on two video models, the Ainsley sign-off line and two music-bed takes. I pick the winning image model and video model by a fixed checklist (style match, clean lines, no stray text, palette).</li>
- <li><b>P1 · Stills (≤96 cr).</b> 48 illustrations generated in batches. Each carries the same style block and the two locked style frames as references. Any still that fails the checklist is redone from the retake reserve.</li>
+ <li><b>P1 · Images (≤98 cr).</b> 49 illustrations, 37 stills plus the 12 clip start frames, generated in batches. Each carries the same style block and the two locked style frames as references. Any still that fails the checklist is redone from the retake reserve.</li>
  <li><b>P2 · Hero clips (≈60 cr).</b> Two 5-second image-to-video clips per episode, made from approved stills only.</li>
  <li><b>P3 · Voice (≈30 cr).</b> Ainsley reads each script in paragraphs, so one fluffed line costs one paragraph to fix, not the whole take.</li>
  <li><b>P4 · Edit (0 cr).</b> I build all diagrams, captions, the grid overlay, sound design and end cards here with ffmpeg and the brand kit. Then I deliver six 1080×1920 masters and four quiz or recap cuts.</li>
@@ -316,7 +320,7 @@ nav.jump{{display:flex;gap:8px;flex-wrap:wrap;align-items:center}} nav.jump a{{f
  </div>
  <div class="tw"><table><thead><tr><th>Phase</th><th>Line item</th><th>Credits</th></tr></thead><tbody>{budget_rows}</tbody>
  <tfoot><tr><td></td><td>Planned total</td><td class="num">{planned:.2f}</td></tr></tfoot></table></div>
- <p class="lede" style="font-size:15px">These prices are Higgsfield's own quotes from today, 4 Nov 2026. If Kling 3.0 Pro wins the motion test (8.75 per clip), I make 10 clips instead of 12, which keeps the total about the same. Nothing is spent on what costs nothing: diagrams, numbers, captions, covers, logo, end cards and the four quiz or recap cuts are built locally. AI models still get numbers and text wrong, so no number ever appears in a generated image.</p>
+ <p class="lede" style="font-size:15px">These prices are Higgsfield's own quotes from today, 4 Nov 2026. If Kling 3.0 Pro wins the motion test (8.75 per clip), I make 8 clips instead of 12: every hook clip, plus the second clip in EP02 and EP06. The other second-clip slots become a still with local motion. That makes P2 70.0 credits (+10), the total 243.65 and the reserve 43.35. The image count stays at 49, because the four dropped clip frames are still used as stills. Nothing is spent on what costs nothing: diagrams, numbers, captions, covers, logo, end cards and the four quiz or recap cuts are built locally. AI models still get numbers and text wrong, so no number ever appears in a generated image.</p>
 </section>
 
 <section style="display:grid;gap:14px"><h2>Model choices</h2>
@@ -346,12 +350,12 @@ nav.jump{{display:flex;gap:8px;flex-wrap:wrap;align-items:center}} nav.jump a{{f
 
 <section style="display:grid;gap:14px"><h2>Style bible</h2>
  <div class="rules">
-  <div class="rule"><h4>Narrative</h4><ul><li>Every episode follows the same arc: <b>surprising claim → why it seems wrong → mechanism → reframe → "Wait… that's a fact."</b></li><li>The first sentence is the hook and is on screen by 0.5 s.</li><li>The tone is clear, plain and slightly cheeky. Nothing is overclaimed: "about", "roughly" and "more than" wherever the source is approximate.</li><li>Every episode is 135–150 words including the sign-off, about 52–58 s.</li></ul></div>
+  <div class="rule"><h4>Narrative</h4><ul><li>Every episode follows the same arc: <b>surprising claim → why it seems wrong → mechanism → reframe → "Wait… that's a fact."</b></li><li>The first sentence is the hook and is on screen by 0.5 s.</li><li>The tone is clear, plain and slightly cheeky. Nothing is overclaimed: "about", "roughly" and "more than" wherever the source is approximate.</li><li>Every episode is 135–150 words including the sign-off, about 51–57 s. The end card holds 1 s after the line.</li><li>The hook shape changes from episode to episode (a claim, a question, a myth to bust) and each has one visual device of its own. That keeps the series from tripping YouTube's repetitive-content rules.</li></ul></div>
   <div class="rule"><h4>Edit grammar</h4><ul><li>The visual changes at least every 2–4 s, and the first change comes by 1.5 s.</li><li>Stills get a slow 3–6% push-in or a two-layer parallax. Diagrams draw on in chalk strokes.</li><li>Cuts are hard cuts. There is one signature orange marker-swipe, at the hook→mechanism turn.</li><li>The badge (FACT 0X · TOPIC) stays on screen throughout. A source tag appears on every number.</li></ul></div>
   <div class="rule"><h4>Captions</h4><ul><li>Bricolage Grotesque ExtraBold, uppercase, 88–96 px, 1–3 words per chunk.</li><li>The key word in each chunk sits on an orange block. Numbers are set in JetBrains Mono.</li><li>Captions sit between y≈1150 and 1400 px and stay clear of the bottom 420 px and the right 150 px, which is the Shorts and Reels UI.</li></ul></div>
   <div class="rule"><h4>Sound</h4><ul><li>Ainsley's VO is normalised. The final mix is −14 LUFS integrated with a −1 dBTP ceiling, so YouTube and Instagram won't turn it down.</li><li>The brand bed runs about 20 dB under the VO and is ducked under speech.</li><li>Chalk-scribble SFX play on draw-ons. A single soft "ding" plays on the reveal line.</li></ul></div>
   <div class="rule"><h4>Consistency checks (every shot)</h4><ul><li>Navy background, palette only.</li><li>White chalk outline, same line weight.</li><li>No text or numbers inside the art.</li><li>Subject is centred, with the top 15% and bottom 30% clear.</li><li>Recurring props are drawn the same way every time: the satellite in EP01, the human silhouette in EP04.</li><li>Any shot that fails one check is regenerated.</li></ul></div>
-  <div class="rule"><h4>Delivery spec</h4><ul><li>1080×1920, 30 fps, H.264 High at about 14 Mbps, AAC 48 kHz at 320 kbps.</li><li>Captions are burned in.</li><li>Same master for YouTube Shorts and Instagram Reels.</li><li>Upload a separate cover image for each.</li><li>Turn on the AI-content label on Instagram. On YouTube, the disclosure isn't required for clearly animated content, but I'd tick it anyway for trust.</li></ul></div>
+  <div class="rule"><h4>Delivery spec</h4><ul><li>1080×1920, 30 fps, H.264 High at about 14 Mbps, AAC 48 kHz at 320 kbps.</li><li>Captions are burned in.</li><li>Same master for YouTube Shorts and Instagram Reels.</li><li>Upload a separate cover image for each.</li><li>AI disclosure: every description gets the line "Narration and visuals AI-generated." Turn on Instagram's AI label (the narration is a realistic synthetic voice). On YouTube, tick the altered or synthetic content setting.</li><li>Music: before publishing I'll confirm that Higgsfield's terms cover commercial use of ElevenLabs Music on your plan. If not, I'll use a track from the YouTube Audio Library instead.</li></ul></div>
  </div>
  <h4>Style block (appended to every image prompt)</h4><div class="block">{e(STYLE_BLOCK)}</div>
  <h4>Motion block (appended to every clip prompt)</h4><div class="block">{e(MOTION_BLOCK)}</div>
