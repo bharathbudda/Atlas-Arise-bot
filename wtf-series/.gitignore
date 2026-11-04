@@ -6,3 +6,6 @@ prod/**/*.png
 prod/**/*.mp3
 prod/**/*.mp4
 prod/music/*
+edit/build/
+out/*.mp4
+out/cuts/
