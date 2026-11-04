@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="32x32">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-EC6HXDFYV4"></script>
 <script>
@@ -135,30 +137,8 @@ body { font-family: 'DM Sans', sans-serif; background: var(--ivory); color: var(
   .article-footer { padding: 1.5rem; }
 }
 
-/* ═══════ ENTRY DISCLAIMER GATE ═══════ */
-.entry-disclaimer { position: fixed; inset: 0; z-index: 5000; background: rgba(8,18,35,0.94); backdrop-filter: blur(10px); display: flex; align-items: center; justify-content: center; padding: 1.5rem; }
-.entry-disclaimer.ed-hidden { display: none; }
-.ed-box { background: linear-gradient(180deg, #0F3059 0%, #0C2D5A 100%); border: 1px solid rgba(201,168,76,0.35); border-radius: 10px; max-width: 620px; width: 100%; max-height: 92vh; overflow-y: auto; padding: 2.5rem; text-align: center; box-shadow: 0 40px 100px rgba(0,0,0,0.6); animation: edIn 0.4s ease; }
-@keyframes edIn { from { opacity:0; transform: translateY(16px); } to { opacity:1; transform: translateY(0); } }
-.ed-scales { margin-bottom: 1rem; }
-.ed-firm { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 700; color: #C9A84C; letter-spacing: 0.1em; }
-.ed-firm-sub { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(232,213,163,0.6); margin-top: 0.35rem; }
-.ed-title { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 400; color: #F5F0E8; margin: 1.5rem 0 1rem; padding-top: 1.25rem; border-top: 1px solid rgba(201,168,76,0.2); }
-.ed-body { text-align: left; }
-.ed-body p { font-size: 0.85rem; color: rgba(232,213,163,0.75); line-height: 1.7; margin-bottom: 0.9rem; }
-.ed-body ul { list-style: none; margin: 0 0 0.9rem; padding: 0; }
-.ed-body li { font-size: 0.82rem; color: rgba(232,213,163,0.7); line-height: 1.65; padding: 0.5rem 0 0.5rem 1.5rem; position: relative; border-bottom: 1px solid rgba(201,168,76,0.08); }
-.ed-body li::before { content: '§'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
-.ed-note { font-style: italic; color: rgba(232,213,163,0.55) !important; font-size: 0.8rem !important; }
-.ed-agree { margin-top: 1.5rem; width: 100%; background: #C9A84C; color: #0C2D5A; border: none; border-radius: 4px; padding: 1rem; font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; transition: background 0.2s, transform 0.15s; }
-.ed-agree:hover { background: #E8D5A3; transform: translateY(-1px); }
-@media (max-width: 600px) {
-  .ed-box { padding: 1.75rem 1.25rem; }
-  .ed-title { font-size: 1.4rem; }
-  .ed-body li { font-size: 0.8rem; }
-}
-
 </style>
+<link rel="stylesheet" href="assets/disclaimer.css">
 </head>
 <body>
 <noscript><style>.entry-disclaimer{display:none!important;}</style></noscript>
@@ -241,8 +221,8 @@ body { font-family: 'DM Sans', sans-serif; background: var(--ivory); color: var(
       <div class="framework-step">
         <div class="step-num">1</div>
         <div class="step-text">
-          <h4>Adangal / Pahani (ROR 1-B)</h4>
-          <p>The village account maintained by the Village Revenue Officer. Shows current cultivation, possession, nature of land (wet/dry/assessed waste), and the name of the pattadar. This is your baseline. Check: is the name consistent with the registered owner? Is the land use consistent with what the documents claim?</p>
+          <h4>Adangal / Pahani and ROR 1-B</h4>
+          <p>The adangal (pahani) is the village account maintained by the Village Revenue Officer. The ROR 1-B is a separate register, the Record of Rights, and the two should be read together. The adangal shows current cultivation, possession, nature of land (wet/dry/assessed waste), and the name of the pattadar. This is your baseline. Check: is the name consistent with the registered owner? Is the land use consistent with what the documents claim?</p>
         </div>
       </div>
       <div class="framework-step">
@@ -256,7 +236,7 @@ body { font-family: 'DM Sans', sans-serif; background: var(--ivory); color: var(
         <div class="step-num">3</div>
         <div class="step-text">
           <h4>Encumbrance Certificate (EC)</h4>
-          <p>Issued by the Sub-Registrar's Office. Shows all registered transactions, sale deeds, mortgages, releases, partition deeds, GPA transactions, for a specified period. Critical check: trace every transaction. An EC showing a sale in 1998 followed by a mortgage in 2003 by the same person is suspicious if there was no release deed before the mortgage.</p>
+          <p>Issued by the Sub-Registrar's Office. Shows all registered transactions, sale deeds, mortgages, releases, partition deeds, GPA transactions, for a specified period. Critical check: trace every transaction. An EC showing that a person sold the property in 1998 and then mortgaged it in 2003 is a red flag, because the seller had nothing left to mortgage. Equally, a mortgage followed by a sale with no registered release on the EC means the mortgage may still be outstanding.</p>
         </div>
       </div>
       <div class="framework-step">
@@ -270,7 +250,7 @@ body { font-family: 'DM Sans', sans-serif; background: var(--ivory); color: var(
         <div class="step-num">5</div>
         <div class="step-text">
           <h4>Survey Records (FMB / Tippan)</h4>
-          <p>Field Measurement Book records maintained by the Survey Department. Shows boundaries, survey number subdivisions, and area measurements. Inconsistency between the survey area in the sale deed and the FMB area, even small discrepancies, can invalidate a transfer or create adverse claims from adjoining owners.</p>
+          <p>Field Measurement Book records maintained by the Survey Department. Shows boundaries, survey number subdivisions, and area measurements. Inconsistency between the survey area in the sale deed and the FMB area, even small discrepancies, can create disputes over the identity and extent of the land, and adverse claims from adjoining owners.</p>
         </div>
       </div>
     </div>
@@ -284,14 +264,14 @@ body { font-family: 'DM Sans', sans-serif; background: var(--ivory); color: var(
     <h3>2. The Undischarged Mortgage</h3>
     <p>An EC shows a mortgage executed in 1992. The property changed hands twice since then. But there is no release deed on the EC. The mortgage may have been discharged informally, or the mortgagee may have died, but without a registered release, the encumbrance legally survives and can be enforced against the current owner.</p>
 
-    <h3>3. The GPA Transaction Without Registration</h3>
-    <p>A General Power of Attorney authorises the agent to sell. The agent sells. The purchaser takes possession. But if the underlying transaction was a sale, not an agency, the GPA itself needed to be registered as a transfer document. The Supreme Court's ruling in <strong><em>Suraj Lamp &amp; Industries v State of Haryana</em></strong> (2012) settled this: GPA sales do not confer title. If the chain includes a GPA transaction, examine it carefully.</p>
+    <h3>3. The GPA Sale</h3>
+    <p>A General Power of Attorney authorises the agent to sell. The agent sells. The purchaser takes possession. But a power of attorney creates only an agency; it does not transfer title. In <strong><em>Suraj Lamp &amp; Industries v State of Haryana</em></strong> (2012), the Supreme Court held that sale agreement, GPA and will transactions are not transfers or sales, and that title to immovable property passes only by a registered deed of conveyance. If the chain includes a GPA transaction, examine it carefully.</p>
 
     <h3>4. Mutation Not Reflecting Registered Owner</h3>
     <p>The revenue records (adangal, pattadar passbook) show Person X as the pattadar. The registered sale deed chain shows Person Y as the owner. This inconsistency arises when a purchase is registered but the buyer never applied for mutation. It is a significant problem in litigation: the Revenue Department recognises X, the registration records show Y. Courts have to reconcile both, and the process is expensive and time-consuming.</p>
 
     <h3>5. Inam / Assigned / Endowment Land Restrictions</h3>
-    <p>In AP, certain categories of land carry statutory restrictions on transfer: assigned lands under the AP Assigned Lands (Prohibition of Transfers) Act 1977, inam lands under the AP Inams Abolition Acts, endowment lands under the AP Endowments Act, and tribal lands in scheduled areas. <strong>A sale deed of restricted land is void ab initio</strong>, not voidable, void. No court will enforce it. If the survey records or village records disclose the land category, check the restriction immediately before proceeding.</p>
+    <p>In AP, certain categories of land carry statutory restrictions on transfer: assigned lands under the AP Assigned Lands (Prohibition of Transfers) Act 1977, inam lands under the AP Inams Abolition Acts, endowment lands under the AP Endowments Act, and tribal lands in scheduled areas. <strong>A transfer in breach of these restrictions is void</strong>, not merely voidable. Some restrictions have been relaxed by amendment for older assignments, so the current position must be verified for each parcel. If the survey records or village records disclose the land category, check the restriction immediately before proceeding.</p>
 
     <h3>6. Survey Discrepancy and Encroachment</h3>
     <p>The sale deed says 0.50 acres. The FMB says the survey number contains 0.35 acres total. The seller claimed to have sold the entire survey number but was also selling a portion to a neighbour. Or the survey number was subdivided in revenue records but not in the registered documents. Physical possession may not match what the documents show, and in an injunction suit, the court will ask for survey evidence.</p>
@@ -302,7 +282,7 @@ body { font-family: 'DM Sans', sans-serif; background: var(--ivory); color: var(
     <p>When a declaration suit or injunction matter comes before a trial court in AP, the judicial approach has been consistently shaped by a few principles from the AP High Court:</p>
     <p><strong>Burden of proof lies on the plaintiff</strong> to establish title by documentary evidence. Mere possession, without documents, is insufficient for a declaration, though it can support an injunction if the possession is established and the defendant cannot show a superior title.</p>
     <p><strong>Revenue records are not title documents</strong>, this is a critical point that even some practitioners miss. The AP High Court has repeatedly held that entries in the adangal or pattadar passbook are evidentiary of possession and fiscal liability, not conclusive proof of title. Title flows from registered documents. Revenue records support it; they do not create it.</p>
-    <p><strong>The 30-year rule</strong>. Under Section 90 of the Indian Evidence Act, documents more than 30 years old, produced from proper custody and appearing genuine, are presumed to be authentic. In AP title matters, building a chain of title going back 30 years gives you the benefit of this presumption for the older documents.</p>
+    <p><strong>The 30-year rule</strong>. Under Section 92 of the Bharatiya Sakshya Adhiniyam, 2023 (formerly Section 90 of the Indian Evidence Act), documents thirty years old, produced from proper custody and appearing genuine, are presumed to be authentic. In AP title matters, building a chain of title going back 30 years gives you the benefit of this presumption for the older documents.</p>
 
     <hr class="section-rule">
 
@@ -322,7 +302,7 @@ body { font-family: 'DM Sans', sans-serif; background: var(--ivory); color: var(
 
     <div class="callout">
       <div class="callout-label">Key Takeaway</div>
-      <p>Title disputes in AP are won and lost on documents, not arguments. The advocate who has collected and cross-checked the complete record chain before filing, and identified the opponent's gaps before they do, has a decisive advantage that no amount of courtroom advocacy can compensate for.</p>
+      <p>Title disputes in AP are won and lost on documents, not arguments. The advocate who has collected and cross-checked the complete record chain before filing, and identified the opponent's gaps before they do, starts from a much stronger position than one who has not.</p>
       <p>If you have a property matter and are unsure about the title, the title position should be examined before any transaction or litigation step. The cost of getting it wrong is almost always higher than the cost of getting it right the first time.</p>
     </div>
 
@@ -350,38 +330,10 @@ body { font-family: 'DM Sans', sans-serif; background: var(--ivory); color: var(
 <footer class="article-footer">
   <p>© 2026 <a href="index.html">BUK Law Partners</a> · Flat No. 103, VV Plaza, RR Colony, Tirupati, 517 501 · <a href="tel:+917337079411">+91 7337079411</a></p>
   <p style="margin-top:0.5rem;font-size:0.68rem;color:rgba(232,213,163,0.2);">This article is for informational purposes only and does not constitute legal advice. Reading this article does not create an advocate-client relationship.</p>
+  <p style="margin-top:0.5rem;font-size:0.7rem;"><a href="privacy.html">Privacy notice</a></p>
 </footer>
 
 
-<script>
-// ENTRY DISCLAIMER GATE - runs after DOM ready
-(function() {
-  function initDisclaimer() {
-    var el = document.getElementById('entryDisclaimer');
-    if (!el) return;
-    var accepted = false;
-    try { accepted = sessionStorage.getItem('bukDisclaimerAccepted') === '1'; } catch(e) {}
-    if (accepted) {
-      el.classList.add('ed-hidden');
-      document.body.style.overflow = '';
-    } else {
-      el.classList.remove('ed-hidden');
-      document.body.style.overflow = 'hidden';
-    }
-  }
-  // Define the accept handler globally so the button onclick can reach it
-  window.acceptDisclaimer = function() {
-    try { sessionStorage.setItem('bukDisclaimerAccepted', '1'); } catch(e) {}
-    var el = document.getElementById('entryDisclaimer');
-    if (el) el.classList.add('ed-hidden');
-    document.body.style.overflow = '';
-  };
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initDisclaimer);
-  } else {
-    initDisclaimer();
-  }
-})();
-</script>
+<script src="assets/disclaimer.js"></script>
 </body>
 </html>

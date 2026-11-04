@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="32x32">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-EC6HXDFYV4"></script>
 <script>
@@ -27,7 +29,7 @@
 <meta property="og:site_name" content="BUK Law Partners">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="BUK Law Partners | Advocates, Tirupati AP">
-<meta name="twitter:description" content="Full-service litigation practice in Tirupati, property, writ, DRT, startup legal counsel across Andhra Pradesh.">
+<meta name="twitter:description" content="A litigation practice in Tirupati, Andhra Pradesh: property, writ, DRT and commercial matters.">
 <meta name="twitter:image" content="https://buklawpartners.com/og-image.png">
 <meta name="geo.region" content="IN-AP">
 <meta name="geo.placename" content="Tirupati">
@@ -40,7 +42,7 @@
   "@context": "https://schema.org",
   "@type": "LegalService",
   "name": "BUK Law Partners",
-  "description": "Full-service litigation practice in Tirupati, Andhra Pradesh.",
+  "description": "Litigation practice in Tirupati, Andhra Pradesh.",
   "url": "https://buklawpartners.com",
   "telephone": "+917337079411",
   "email": "buklawoffice@gmail.com",
@@ -61,56 +63,8 @@
   "areaServed": { "@type": "State", "name": "Andhra Pradesh" },
   "serviceType": ["Property Law","Civil Litigation","Constitutional Law","Debt Recovery","Commercial Litigation","Startup Legal Counsel","IBC/NCLT","Arbitration","Revenue Law"],
   "founder": [
-    { "@type": "Person", "name": "Budda Udaya Kumar", "jobTitle": "Senior Advocate" },
+    { "@type": "Person", "name": "Budda Udaya Kumar", "jobTitle": "Founding & Senior Partner" },
     { "@type": "Person", "name": "Bharath Budda", "jobTitle": "Advocate" }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "How do I find a good property dispute lawyer in Tirupati?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "BUK Law Partners is a full-service litigation firm in Tirupati specialising in property and land disputes, title verification, and declaration suits across Andhra Pradesh. We handle title disputes, encumbrance challenges, revenue court matters, and registered sale deed challenges before the High Court of AP and district courts. You can schedule a consultation by calling +91 7337079411."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is the process for filing a writ petition in the AP High Court?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A writ petition under Article 226 is filed before the High Court of Andhra Pradesh at Amaravati to challenge illegal administrative action or protect fundamental rights. It requires identifying the correct remedy (Mandamus, Certiorari, etc.), framing the cause of action, and making a case for interim relief at the threshold stage. BUK Law Partners handles writ petitions, stay applications, and interim injunctions before the AP High Court."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is SARFAESI and how can a lawyer help with DRT proceedings?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "SARFAESI (the Securitisation and Reconstruction of Financial Assets and Enforcement of Security Interest Act) allows banks to enforce security without court intervention. Borrowers can challenge such action through a Securitisation Application (SA) before the Debt Recovery Tribunal. BUK Law Partners represents clients in SARFAESI proceedings, SA petitions before the DRT at Hyderabad, and appeals before the DRAT."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do you provide legal services for startups in Andhra Pradesh?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. BUK Law Partners provides startup legal counsel including company incorporation (private limited, LLP, OPC), founder and shareholder agreements, IP protection and trademark filing, commercial contracts, and legal due diligence. Founding partner Bharath Budda has co-founded a legal technology company and advises startups on corporate strategy, IP, and commercial dispute resolution."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Where is BUK Law Partners located and what are the office hours?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "BUK Law Partners is located at Flat No. 103, VV Plaza, RR Colony, Tirupati, 517 501, Andhra Pradesh. Office hours are Monday to Saturday, 9:00 AM to 6:00 PM. You can reach the office at +91 7337079411 or by email at buklawoffice@gmail.com."
-      }
-    }
   ]
 }
 </script>
@@ -258,6 +212,12 @@ h1,h2,h3,h4 { font-family: 'Cormorant Garamond', serif; line-height: 1.15; }
 .tag-rect { font-size: 0.7rem; padding: 0.3rem 0.75rem; border-radius: 2px; background: var(--steel-mid); color: var(--gold-light); letter-spacing: 0.03em; font-family: 'DM Sans', sans-serif; display: inline-block; }
 .partner-edu { margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid rgba(201,168,76,0.15); }
 .partner-edu p { font-size: 0.75rem; color: rgba(232,213,163,0.45); line-height: 1.7; font-style: italic; }
+
+/* ── PARTNER PORTRAITS ── */
+.partner-card { overflow: hidden; }
+.partner-portrait { margin: -2.5rem -2.5rem 1.75rem; aspect-ratio: 4 / 4.4; overflow: hidden; border-bottom: 1px solid rgba(201,168,76,0.35); background: #0F2A4A; }
+.partner-portrait img { width: 100%; height: 100%; object-fit: cover; object-position: center 15%; display: block; }
+@media (max-width: 600px) { .partner-portrait { margin: -1.5rem -1.5rem 1.25rem; } }
 
 /* ── TIER DIVIDERS ── */
 .tier-divider { display: flex; align-items: center; gap: 1.5rem; margin: 3rem 0 2rem; }
@@ -512,30 +472,8 @@ a[href^="tel"]:hover { color: var(--gold); }
 .practice-more:hover { color:var(--gold-light); letter-spacing:0.14em; }
 
 
-/* ═══════ ENTRY DISCLAIMER GATE ═══════ */
-.entry-disclaimer { position: fixed; inset: 0; z-index: 5000; background: rgba(8,18,35,0.94); backdrop-filter: blur(10px); display: flex; align-items: center; justify-content: center; padding: 1.5rem; }
-.entry-disclaimer.ed-hidden { display: none; }
-.ed-box { background: linear-gradient(180deg, #0F3059 0%, #0C2D5A 100%); border: 1px solid rgba(201,168,76,0.35); border-radius: 10px; max-width: 620px; width: 100%; max-height: 92vh; overflow-y: auto; padding: 2.5rem; text-align: center; box-shadow: 0 40px 100px rgba(0,0,0,0.6); animation: edIn 0.4s ease; }
-@keyframes edIn { from { opacity:0; transform: translateY(16px); } to { opacity:1; transform: translateY(0); } }
-.ed-scales { margin-bottom: 1rem; }
-.ed-firm { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 700; color: #C9A84C; letter-spacing: 0.1em; }
-.ed-firm-sub { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(232,213,163,0.6); margin-top: 0.35rem; }
-.ed-title { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 400; color: #F5F0E8; margin: 1.5rem 0 1rem; padding-top: 1.25rem; border-top: 1px solid rgba(201,168,76,0.2); }
-.ed-body { text-align: left; }
-.ed-body p { font-size: 0.85rem; color: rgba(232,213,163,0.75); line-height: 1.7; margin-bottom: 0.9rem; }
-.ed-body ul { list-style: none; margin: 0 0 0.9rem; padding: 0; }
-.ed-body li { font-size: 0.82rem; color: rgba(232,213,163,0.7); line-height: 1.65; padding: 0.5rem 0 0.5rem 1.5rem; position: relative; border-bottom: 1px solid rgba(201,168,76,0.08); }
-.ed-body li::before { content: '§'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
-.ed-note { font-style: italic; color: rgba(232,213,163,0.55) !important; font-size: 0.8rem !important; }
-.ed-agree { margin-top: 1.5rem; width: 100%; background: #C9A84C; color: #0C2D5A; border: none; border-radius: 4px; padding: 1rem; font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; transition: background 0.2s, transform 0.15s; }
-.ed-agree:hover { background: #E8D5A3; transform: translateY(-1px); }
-@media (max-width: 600px) {
-  .ed-box { padding: 1.75rem 1.25rem; }
-  .ed-title { font-size: 1.4rem; }
-  .ed-body li { font-size: 0.8rem; }
-}
-
 </style>
+<link rel="stylesheet" href="assets/disclaimer.css">
 </head>
 <body>
 <noscript><style>.entry-disclaimer{display:none!important;}</style></noscript>
@@ -628,7 +566,7 @@ a[href^="tel"]:hover { color: var(--gold); }
     <div>
       <div class="hero-tag fade-up">Tirupati, Andhra Pradesh</div>
       <h1 class="hero-h1 fade-up">Principled<br>Advocacy.<br><em>Rooted in Research.</em></h1>
-      <p class="hero-sub fade-up">Full-service litigation practice appearing before the High Court of Andhra Pradesh, the Debt Recovery Tribunal, and courts across the state. The firm practises in property disputes, writ petitions, commercial litigation, and debt recovery matters.</p>
+      <p class="hero-sub fade-up">A litigation practice appearing before the High Court of Andhra Pradesh, the Debt Recovery Tribunal, and courts across the state. The firm practises in property disputes, writ petitions, commercial litigation, and debt recovery matters.</p>
       <div class="hero-btns fade-up">
         <a href="#contact" onclick="openModal();return false;" class="btn-primary">Contact Us</a>
         <a href="#practice" class="btn-secondary">Our Practice Areas</a>
@@ -637,7 +575,7 @@ a[href^="tel"]:hover { color: var(--gold); }
     <div class="hero-card">
       <h3>Where We Appear</h3>
       <div class="hero-stat-row">
-        <div class="hero-stat"><div class="hero-stat-num">8+</div><div class="hero-stat-label">Practice Areas</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">9</div><div class="hero-stat-label">Practice Areas</div></div>
         <div class="hero-stat"><div class="hero-stat-num">AP</div><div class="hero-stat-label">State-wide</div></div>
       </div>
       <ul class="hero-courts">
@@ -655,7 +593,7 @@ a[href^="tel"]:hover { color: var(--gold); }
 <!-- QUOTE -->
 <section id="quote">
   <p class="quote-text">"Law is not merely about statutes and precedents, it is about constructing a narrative so clear and so sound that no court can look away from the justice it demands."</p>
-  <div class="quote-attr">,  BUK Law Partners</div>
+  <div class="quote-attr">BUK Law Partners</div>
 </section>
 
 <!-- ABOUT -->
@@ -674,13 +612,13 @@ a[href^="tel"]:hover { color: var(--gold); }
       </div>
       <div class="about-right">
         <p>BUK Law Partners was founded on the conviction that <strong>complex legal problems demand structured, research-driven solutions</strong>. With a base in Tirupati and an active presence before the High Court of Andhra Pradesh at Amaravati, the firm handles a wide spectrum of litigation. The firm has been in practice <strong>since 1995</strong>.</p>
-        <p>Our advocates bring deep expertise in <strong>procedural law and statutory interpretation</strong>, built through years of trial court and High Court practice. We handle property title disputes, writ petitions under Article 226, SARFAESI and DRT proceedings, civil appeals, commercial contract disputes, and revenue court matters across Andhra Pradesh.</p>
-        <p>Whether you need an <strong>property dispute lawyer in Tirupati</strong>, a <strong>High Court advocate in Andhra Pradesh</strong>, or expert legal advice on debt recovery, startup law, or banking matters, our team has the depth and standing to represent you effectively.</p>
+        <p>The firm's work is grounded in <strong>procedural law and statutory interpretation</strong>, developed through years of trial court and High Court practice. We handle property title disputes, writ petitions under Article 226, SARFAESI and DRT proceedings, civil appeals, commercial contract disputes, and revenue court matters across Andhra Pradesh.</p>
+        <p>The firm's advocates act in <strong>property disputes in Tirupati</strong>, appear as <strong>High Court advocates in Andhra Pradesh</strong>, and advise on debt recovery, startup law, and banking matters.</p>
         <p>We serve clients across <strong>Tirupati, Chittoor District, Chandragiri, Renigunta, Srikalahasti, Puttur and the surrounding areas</strong>, and appear before the High Court of Andhra Pradesh at Amaravati, the Debt Recovery Tribunal at Hyderabad, and courts and tribunals throughout the state.</p>
         <div class="stat-bar">
           <div class="stat-item"><div class="stat-num">1995</div><div class="stat-label">Est.</div></div>
           <div class="stat-item"><div class="stat-num">HC</div><div class="stat-label">High Court AP</div></div>
-          <div class="stat-item"><div class="stat-num">8+</div><div class="stat-label">Practice Areas</div></div>
+          <div class="stat-item"><div class="stat-num">9</div><div class="stat-label">Practice Areas</div></div>
           <div class="stat-item"><div class="stat-num">AP</div><div class="stat-label">State-wide</div></div>
         </div>
       </div>
@@ -721,15 +659,15 @@ a[href^="tel"]:hover { color: var(--gold); }
 <section id="why">
   <div class="section-wrap">
     <div class="section-tag">Our Approach</div>
-    <h2 class="section-title">Why BUK Law Partners</h2>
-    <p class="section-lead">Six reasons clients trust us with their most important legal matters, from first advice to final order.</p>
+    <h2 class="section-title">How We Work</h2>
+    <p class="section-lead">How the firm approaches a matter, from first advice to final order.</p>
     <div class="why-grid">
       <div class="why-item"><div class="why-num">I</div><div class="why-text"><h4>Structured Case Analysis</h4><p>Every matter begins with a thorough review of documents, a fact-pattern analysis, and a clear assessment of strengths, risks, and strategy, before a single step is taken in court.</p></div></div>
-      <div class="why-item"><div class="why-num">II</div><div class="why-text"><h4>Mastery of AP Law</h4><p>Our practice is rooted in the specific statutes, government orders, and judicial trends that govern Andhra Pradesh, from the Estates Abolition Act to SARFAESI and beyond.</p></div></div>
-      <div class="why-item"><div class="why-num">III</div><div class="why-text"><h4>Interim Relief When It Matters</h4><p>Protecting your rights at the threshold stage is often the most critical moment in litigation. We are experienced in obtaining stays, injunctions, and ad-interim orders under time pressure.</p></div></div>
+      <div class="why-item"><div class="why-num">II</div><div class="why-text"><h4>Focus on AP Law</h4><p>Our practice is rooted in the specific statutes, government orders, and judicial trends that govern Andhra Pradesh, from the Estates Abolition Act to SARFAESI and beyond.</p></div></div>
+      <div class="why-item"><div class="why-num">III</div><div class="why-text"><h4>Interim Relief When It Matters</h4><p>Protecting your rights at the threshold stage is often the most critical moment in litigation. Applications for stays, injunctions, and ad-interim orders are prepared with the urgency they often require.</p></div></div>
       <div class="why-item"><div class="why-num">IV</div><div class="why-text"><h4>End-to-End Representation</h4><p>From the first legal notice to the final order, we handle every stage of your matter, drafting, filing, arguing, and follow-through on execution.</p></div></div>
-      <div class="why-item"><div class="why-num">V</div><div class="why-text"><h4>Transparent Communication</h4><p>We keep clients informed at each stage with clear, plain-language updates on case developments, court dates, and strategic decisions. No surprises.</p></div></div>
-      <div class="why-item"><div class="why-num">VI</div><div class="why-text"><h4>Multi-Forum Practice</h4><p>Whether your matter belongs in a trial court, the High Court, a DRT, or a revenue tribunal, we have the experience and standing to represent you effectively across all forums in AP.</p></div></div>
+      <div class="why-item"><div class="why-num">V</div><div class="why-text"><h4>Transparent Communication</h4><p>We keep clients informed at each stage with clear, plain-language updates on case developments, court dates, and strategic decisions.</p></div></div>
+      <div class="why-item"><div class="why-num">VI</div><div class="why-text"><h4>Multi-Forum Practice</h4><p>Whether your matter belongs in a trial court, the High Court, a DRT, or a revenue tribunal, the firm's advocates appear across these forums in AP.</p></div></div>
     </div>
   </div>
 </section>
@@ -756,19 +694,16 @@ a[href^="tel"]:hover { color: var(--gold); }
   <div class="section-wrap">
     <div class="section-tag">The Advocates</div>
     <h2 class="section-title light">Our People</h2>
-    <p class="section-lead light">Two founding partners and a team of advocates, combining decades of experience with fresh energy and a commitment to rigorous, client-focused practice across Andhra Pradesh.</p>
+    <p class="section-lead light">Two founding partners and a team of advocates practising across Andhra Pradesh.</p>
 
     <!-- FOUNDING PARTNERS -->
     <div class="partners-grid">
       <div class="partner-card">
-        <div class="avatar-wrap">
-          <img class="avatar-img avatar-lg" src="photos/udaya-kumar.jpg" alt="Budda Udaya Kumar" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="avatar-fallback avatar-lg" style="display:none">BU</div>
-        </div>
+        <div class="partner-portrait"><img src="photos/udaya-kumar.jpg" alt="Budda Udaya Kumar" width="780" height="1040" loading="lazy"></div>
         <h3>Budda Udaya Kumar</h3>
-        <div class="partner-title">Founding Partner &amp; Senior Advocate</div>
-        <p class="partner-bio">Budda Udaya Kumar brings decades of experience in constitutional and civil litigation before the High Court of Andhra Pradesh. With a practice spanning writ petitions, civil appeals, and property matters, he is known for his command of procedural law and his ability to construct clear, persuasive arguments on complex fact patterns. His practice covers the High Court at Amaravati, the DRT at Hyderabad, and district courts across AP.</p>
-        <div class="expertise-label">Areas of Expertise</div>
+        <div class="partner-title">Founding &amp; Senior Partner · In practice since 1995</div>
+        <p class="partner-bio">Budda Udaya Kumar has practised since 1995 in constitutional and civil litigation before the High Court of Andhra Pradesh. The practice spans writ petitions, civil appeals, and property matters, with a focus on procedural law and complex fact patterns, and covers the High Court at Amaravati, the DRT at Hyderabad, and district courts across AP.</p>
+        <div class="expertise-label">Areas of Practice</div>
         <div class="partner-tags">
           <span class="tag-rect">High Court Writ Petitions</span>
           <span class="tag-rect">Civil Appeals</span>
@@ -781,15 +716,12 @@ a[href^="tel"]:hover { color: var(--gold); }
         </div>
       </div>
       <div class="partner-card">
-        <div class="avatar-wrap">
-          <img class="avatar-img avatar-lg" src="photos/bharath-budda.jpg" alt="Bharath Budda" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="avatar-fallback avatar-lg" style="display:none">BB</div>
-        </div>
+        <div class="partner-portrait"><img src="photos/bharath-budda.jpg" alt="Bharath Budda" width="780" height="1040" loading="lazy"></div>
         <h3>Bharath Budda</h3>
         <div class="partner-title">Founding Partner &amp; Advocate · High Court of A.P.</div>
         <p class="partner-bio">Bharath Budda is a litigation advocate and legal technologist with a practice covering civil and commercial litigation, title disputes, revenue matters, and administrative law across the High Court of Andhra Pradesh, district courts in Tirupati, and the NCLT. His work spans constitutional challenges, insolvency and IBC proceedings, intellectual property, and high-value arbitration before retired High Court Judges.</p>
         <p class="partner-bio" style="margin-top:0.75rem;">Prior to BUK Law Partners, Bharath was an Associate (Strategic Initiatives) at Spice Route Legal, Bengaluru. He is co-founder of LegalE Innovation Pvt. Ltd., an AI-driven litigation management platform, advises startups on IP and commercial structuring, and works as a legal analyst for Solomonic, a UK-based litigation analytics platform.</p>
-        <div class="expertise-label">Areas of Expertise</div>
+        <div class="expertise-label">Areas of Practice</div>
         <div class="partner-tags">
           <span class="tag-rect">Civil &amp; Commercial Litigation</span>
           <span class="tag-rect">Title Disputes</span>
@@ -821,13 +753,13 @@ a[href^="tel"]:hover { color: var(--gold); }
             <div class="sa-title-row"><span class="sa-title">Senior Associate</span><span class="sa-exp">20+ Years</span></div>
           </div>
         </div>
-        <div class="sa-expertise">Civil litigation, property matters, trial court proceedings and revenue law across Chittoor District. A trusted presence at the firm for two decades.</div>
+        <div class="sa-expertise">Civil litigation, property matters, trial court proceedings and revenue law across Chittoor District. With the firm for two decades.</div>
       </div>
       <div class="senior-associate-card">
         <div class="sa-top">
           <div class="avatar-wrap" style="margin-bottom:0;flex-shrink:0;">
-            <img class="avatar-img avatar-md" src="photos/kiran-kumar.jpg" alt="T. Kiran Kumar" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-            <div class="avatar-fallback avatar-md" style="display:none">TK</div>
+            
+            <div class="avatar-fallback avatar-md">TK</div>
           </div>
           <div class="sa-info">
             <div class="sa-name">T. Kiran Kumar</div>
@@ -842,7 +774,7 @@ a[href^="tel"]:hover { color: var(--gold); }
     <div class="tier-divider"><span class="tier-label">Associates</span></div>
     <div class="junior-associates-grid">
       <div class="junior-card">
-        <div class="avatar-wrap"><img class="avatar-img avatar-sm" src="photos/pramod-kumar.jpg" alt="K. Pramod Kumar Reddy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="avatar-fallback avatar-sm" style="display:none">KP</div></div>
+        <div class="avatar-wrap"><div class="avatar-fallback avatar-sm">KP</div></div>
         <div class="junior-name">K. Pramod Kumar Reddy</div>
         <div class="junior-badge">Associate · 2+ Yrs</div>
         <div class="junior-expertise">Civil litigation, property disputes and revenue court matters.</div>
@@ -869,7 +801,7 @@ a[href^="tel"]:hover { color: var(--gold); }
         <div class="avatar-wrap"><img class="avatar-img avatar-sm" src="photos/yaswanth-reddy.jpg" alt="A. Yaswanth Kumar Reddy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="avatar-fallback avatar-sm" style="display:none">YR</div></div>
         <div class="junior-name">A. Yaswanth Kumar Reddy</div>
         <div class="junior-badge">Associate · 1 Yr</div>
-        <div class="junior-expertise">A young, talented advocate bringing energy and fresh thinking to civil and property matters.</div>
+        <div class="junior-expertise">Civil and property matters.</div>
       </div>
     </div>
   </div>
@@ -909,7 +841,7 @@ a[href^="tel"]:hover { color: var(--gold); }
         </div>
       </div>
       <div class="startup-right">
-        <p>Bharath Budda brings a rare combination of <strong>litigation experience and startup ecosystem understanding</strong> to founder legal matters. Having co-founded a legal technology company and advised early-stage ventures on corporate strategy, IP, and commercial structuring, he advises startups not just as a lawyer but as someone who has navigated the same challenges.</p>
+        <p>Bharath Budda brings <strong>litigation experience and an understanding of the startup ecosystem</strong> to founder legal matters. Having co-founded a legal technology company and advised early-stage ventures on corporate strategy, IP, and commercial structuring, he advises startups not just as a lawyer but as someone who has navigated the same challenges.</p>
         <p>Whether you are <strong>incorporating your first company in Andhra Pradesh</strong>, negotiating your first institutional contract, protecting your product's intellectual property, or dealing with a commercial dispute, a structured legal foundation is what lets founders focus on building.</p>
         <p>We advise founders at pre-incorporation stage, seed stage, and through early commercial operations on matters ranging from <strong>MoU drafting and equity structuring</strong> to regulatory compliance and investor-facing due diligence.</p>
         <a href="#contact" onclick="openModal();return false;" class="btn-primary" style="margin-top:0.5rem;display:inline-block;">Get in Touch</a>
@@ -974,7 +906,7 @@ a[href^="tel"]:hover { color: var(--gold); }
       <div>
         <div class="footer-logo">BUK LAW PARTNERS</div>
         <div class="footer-tagline">"Principled Advocacy, Rooted in Research."</div>
-        <p class="footer-desc">Full-service litigation practice based in Tirupati, Andhra Pradesh. Advocates since 1995. Appearing before the High Court of AP, the Debt Recovery Tribunal, and courts across the state.</p>
+        <p class="footer-desc">Litigation practice based in Tirupati, Andhra Pradesh, since 1995. Appearing before the High Court of AP, the Debt Recovery Tribunal, and courts across the state.</p>
       </div>
       <div class="footer-col">
         <h4>Property &amp; Real Estate</h4>
@@ -1021,7 +953,7 @@ a[href^="tel"]:hover { color: var(--gold); }
       </div>
     </div>
     <div class="footer-bottom">
-      <div class="footer-copy">© 2026 BUK Law Partners. All rights reserved. | Advocates &amp; Legal Consultants, Andhra Pradesh</div>
+      <div class="footer-copy">© 2026 BUK Law Partners. All rights reserved. | Advocates &amp; Legal Consultants, Andhra Pradesh | <a href="privacy.html" style="color:inherit;">Privacy notice</a></div>
       <div class="footer-badge">AP Bar Council · AP/2224/2018</div>
     </div>
   </footer>
@@ -1069,7 +1001,7 @@ a[href^="tel"]:hover { color: var(--gold); }
             <label for="fdesc">Brief Description <span style="color:var(--text-muted);font-weight:300;">(optional)</span></label>
             <textarea id="fdesc" name="description" placeholder="A few sentences about your situation, entirely optional."></textarea>
           </div>
-          <p class="form-disclaimer"><strong>Disclaimer:</strong> Submitting this form does not create an advocate-client relationship. The information shared is solely for scheduling a callback and will be kept strictly confidential. This website does not provide legal advice and is not intended to solicit clients.</p>
+          <p class="form-disclaimer"><strong>Disclaimer:</strong> Submitting this form does not create an advocate-client relationship. The information shared is solely for scheduling a callback and will be kept strictly confidential. This website does not provide legal advice and is not intended to solicit clients. See the <a href="privacy.html" style="color:var(--gold);">privacy notice</a>.</p>
           <button type="submit" class="form-submit" id="submitBtn">Send Enquiry</button>
         </form>
       </div>
@@ -1085,10 +1017,6 @@ a[href^="tel"]:hover { color: var(--gold); }
 </div>
 
 <!-- DISCLAIMER BAR -->
-<div class="disclaimer-bar" id="disclaimerBar">
-  <p><strong>Disclaimer:</strong> This website is for informational purposes only. It does not constitute legal advice and does not create an advocate-client relationship. The information contained herein is not intended to solicit clients. BUK Law Partners is enrolled with the Bar Council of Andhra Pradesh.</p>
-  <button class="disclaimer-close" onclick="dismissDisclaimer()">I Understand</button>
-</div>
 
 <script>
 // ── NAVBAR ──
@@ -1146,11 +1074,12 @@ document.getElementById('consultForm').addEventListener('submit', async function
   btn.textContent = 'Sending...';
   const formData = new FormData(this);
   try {
-    await fetch('/', {
+    const res = await fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: new URLSearchParams(formData).toString()
     });
+    if (!res.ok) throw new Error('Form submission failed: ' + res.status);
     document.getElementById('formWrap').style.display = 'none';
     document.getElementById('formSuccess').style.display = 'block';
     if (typeof gtag !== 'undefined') {
@@ -1163,48 +1092,9 @@ document.getElementById('consultForm').addEventListener('submit', async function
   }
 });
 
-// ── DISCLAIMER ──
-function dismissDisclaimer() {
-  document.getElementById('disclaimerBar').classList.remove('show');
-  sessionStorage.setItem('disclaimerDismissed', '1');
-}
-setTimeout(() => {
-  if (!sessionStorage.getItem('disclaimerDismissed')) {
-    document.getElementById('disclaimerBar').classList.add('show');
-  }
-}, 2000);
 
 
 </script>
-<script>
-// ENTRY DISCLAIMER GATE - runs after DOM ready
-(function() {
-  function initDisclaimer() {
-    var el = document.getElementById('entryDisclaimer');
-    if (!el) return;
-    var accepted = false;
-    try { accepted = sessionStorage.getItem('bukDisclaimerAccepted') === '1'; } catch(e) {}
-    if (accepted) {
-      el.classList.add('ed-hidden');
-      document.body.style.overflow = '';
-    } else {
-      el.classList.remove('ed-hidden');
-      document.body.style.overflow = 'hidden';
-    }
-  }
-  // Define the accept handler globally so the button onclick can reach it
-  window.acceptDisclaimer = function() {
-    try { sessionStorage.setItem('bukDisclaimerAccepted', '1'); } catch(e) {}
-    var el = document.getElementById('entryDisclaimer');
-    if (el) el.classList.add('ed-hidden');
-    document.body.style.overflow = '';
-  };
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initDisclaimer);
-  } else {
-    initDisclaimer();
-  }
-})();
-</script>
+<script src="assets/disclaimer.js"></script>
 </body>
 </html>

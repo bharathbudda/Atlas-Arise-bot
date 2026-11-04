@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="32x32">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-EC6HXDFYV4"></script>
 <script>
@@ -101,30 +103,8 @@ body { font-family:'DM Sans',sans-serif; background:var(--ivory); color:var(--in
   .article-footer { padding:1.5rem; }
 }
 
-/* ═══════ ENTRY DISCLAIMER GATE ═══════ */
-.entry-disclaimer { position: fixed; inset: 0; z-index: 5000; background: rgba(8,18,35,0.94); backdrop-filter: blur(10px); display: flex; align-items: center; justify-content: center; padding: 1.5rem; }
-.entry-disclaimer.ed-hidden { display: none; }
-.ed-box { background: linear-gradient(180deg, #0F3059 0%, #0C2D5A 100%); border: 1px solid rgba(201,168,76,0.35); border-radius: 10px; max-width: 620px; width: 100%; max-height: 92vh; overflow-y: auto; padding: 2.5rem; text-align: center; box-shadow: 0 40px 100px rgba(0,0,0,0.6); animation: edIn 0.4s ease; }
-@keyframes edIn { from { opacity:0; transform: translateY(16px); } to { opacity:1; transform: translateY(0); } }
-.ed-scales { margin-bottom: 1rem; }
-.ed-firm { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 700; color: #C9A84C; letter-spacing: 0.1em; }
-.ed-firm-sub { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(232,213,163,0.6); margin-top: 0.35rem; }
-.ed-title { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 400; color: #F5F0E8; margin: 1.5rem 0 1rem; padding-top: 1.25rem; border-top: 1px solid rgba(201,168,76,0.2); }
-.ed-body { text-align: left; }
-.ed-body p { font-size: 0.85rem; color: rgba(232,213,163,0.75); line-height: 1.7; margin-bottom: 0.9rem; }
-.ed-body ul { list-style: none; margin: 0 0 0.9rem; padding: 0; }
-.ed-body li { font-size: 0.82rem; color: rgba(232,213,163,0.7); line-height: 1.65; padding: 0.5rem 0 0.5rem 1.5rem; position: relative; border-bottom: 1px solid rgba(201,168,76,0.08); }
-.ed-body li::before { content: '§'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
-.ed-note { font-style: italic; color: rgba(232,213,163,0.55) !important; font-size: 0.8rem !important; }
-.ed-agree { margin-top: 1.5rem; width: 100%; background: #C9A84C; color: #0C2D5A; border: none; border-radius: 4px; padding: 1rem; font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; transition: background 0.2s, transform 0.15s; }
-.ed-agree:hover { background: #E8D5A3; transform: translateY(-1px); }
-@media (max-width: 600px) {
-  .ed-box { padding: 1.75rem 1.25rem; }
-  .ed-title { font-size: 1.4rem; }
-  .ed-body li { font-size: 0.8rem; }
-}
-
 </style>
+<link rel="stylesheet" href="assets/disclaimer.css">
 </head>
 <body>
 <noscript><style>.entry-disclaimer{display:none!important;}</style></noscript>
@@ -195,7 +175,7 @@ body { font-family:'DM Sans',sans-serif; background:var(--ivory); color:var(--in
     <h2>5. Trusting an Unapproved Layout</h2>
     <p>Plots sold in unapproved layouts, without proper DTCP or local authority sanction, can face regularisation problems, penalties or difficulty at resale. A registered plot in an unapproved layout is still a risky plot.</p>
     <h2>6. Not Converting Agricultural Land Before Building</h2>
-    <p>Agricultural land generally cannot be used for construction until it is converted for non agricultural use. Buyers who assume they can build immediately are frequently caught out.</p>
+    <p>Agricultural land generally cannot be used for construction until it is converted for non-agricultural use. Buyers who assume they can build immediately are frequently caught out.</p>
     <div class="callout">
       <div class="callout-label">The Bottom Line</div>
       <p>Land rewards patience and punishes assumptions. Before you buy a plot, trace the title, check the survey records, confirm the land is neither prohibited nor within a buffer zone, and verify the layout approval. Each check is small, and skipping them is what turns a good investment into a long dispute.</p>
@@ -224,37 +204,9 @@ body { font-family:'DM Sans',sans-serif; background:var(--ivory); color:var(--in
 <footer class="article-footer">
   <p>© 2026 <a href='/'>BUK Law Partners</a> · Flat No. 103, VV Plaza, RR Colony, Tirupati, 517 501 · <a href="tel:+917337079411">+91 7337079411</a> (Office / WhatsApp)</p>
   <p style="margin-top:0.5rem;font-size:0.68rem;color:rgba(232,213,163,0.2);">This article is for general information only and does not constitute legal advice. Reading it does not create an advocate-client relationship. Legal positions vary with facts and change over time; obtain advice on your specific situation.</p>
+  <p style="margin-top:0.5rem;font-size:0.7rem;"><a href="privacy.html">Privacy notice</a></p>
 </footer>
 
-<script>
-// ENTRY DISCLAIMER GATE - runs after DOM ready
-(function() {
-  function initDisclaimer() {
-    var el = document.getElementById('entryDisclaimer');
-    if (!el) return;
-    var accepted = false;
-    try { accepted = sessionStorage.getItem('bukDisclaimerAccepted') === '1'; } catch(e) {}
-    if (accepted) {
-      el.classList.add('ed-hidden');
-      document.body.style.overflow = '';
-    } else {
-      el.classList.remove('ed-hidden');
-      document.body.style.overflow = 'hidden';
-    }
-  }
-  // Define the accept handler globally so the button onclick can reach it
-  window.acceptDisclaimer = function() {
-    try { sessionStorage.setItem('bukDisclaimerAccepted', '1'); } catch(e) {}
-    var el = document.getElementById('entryDisclaimer');
-    if (el) el.classList.add('ed-hidden');
-    document.body.style.overflow = '';
-  };
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initDisclaimer);
-  } else {
-    initDisclaimer();
-  }
-})();
-</script>
+<script src="assets/disclaimer.js"></script>
 </body>
 </html>
