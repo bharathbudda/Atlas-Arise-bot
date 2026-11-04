@@ -1,0 +1,9 @@
+The clocks on GPS satellites are set wrong. On purpose.
+GPS is a timing machine. Satellites twenty thousand kilometres up broadcast the exact time, and your phone works out where you are from how long each signal took to arrive.
+Up there, gravity is weaker, and Einstein's relativity says clocks tick faster in weaker gravity. About forty-five microseconds a day faster.
+But the satellites also fly at nearly four kilometres a second, and moving clocks tick slower. About seven microseconds.
+Net result: thirty-eight microseconds fast, every day. Sounds tiny.
+Wait.
+The signals travel at the speed of light, so that drift is worth more than ten kilometres of error. Per day.
+So before launch, engineers tune each clock to tick slightly slow, and in orbit it keeps near-perfect time.
+So the next time that blue dot finds you, remember...

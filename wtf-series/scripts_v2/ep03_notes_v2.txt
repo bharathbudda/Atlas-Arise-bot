@@ -1,0 +1,9 @@
+Every piano repeats itself after twelve keys. Why twelve?
+Because twelve is where maths and your ears almost agree.
+Notes sound good together when their frequencies form simple ratios. Double the frequency and you get the same note, an octave higher. Multiply by three over two and you get a fifth, the smoothest-sounding interval after the octave.
+Now stack fifths. After twelve of them, you land almost exactly seven octaves up.
+Wait. Almost?
+Twelve fifths multiply the frequency by 129.7. Seven octaves give exactly 128. That gap is the Pythagorean comma.
+Over centuries, musicians settled on a compromise. Shrink every fifth by a hair, and twelve equal steps fit the octave perfectly.
+It's not universal. Indian music theory describes twenty-two shrutis, and Javanese gamelan uses scales of five or seven tones.
+Twelve isn't magic. It's the best deal our ears would accept. That's why...
