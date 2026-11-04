@@ -1,0 +1,195 @@
+<title>WTF Style Audit</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Caveat:wght@700&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+/* Layout: one reading column; a wide comparison table in its own scroller; findings then the proposed system. */
+:root{--bg:#F4F6FA;--paper:#FFFFFF;--ink:#13213C;--muted:#55627A;--line:#D9DFEA;--accent:#E0700A;--accent-ink:#13213C;--chip:#FFE6CC;--good:#1F7A4D;--bad:#B3261E;
+ --display:'Bricolage Grotesque',system-ui,sans-serif;--body:'Bricolage Grotesque',system-ui,sans-serif;--hand:'Caveat',cursive;--mono:'JetBrains Mono',ui-monospace,monospace}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0E1830;--paper:#13213C;--ink:#EEF2F8;--muted:#9AA9C4;--line:#24365E;--accent:#FF8C1A;--chip:#3A2A17;--good:#6FD3A0;--bad:#FF8A80;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0E1830;--paper:#13213C;--ink:#EEF2F8;--muted:#9AA9C4;--line:#24365E;--accent:#FF8C1A;--chip:#3A2A17;--good:#6FD3A0;--bad:#FF8A80;color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font:500 16px/1.55 var(--body);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1080px;margin:0 auto;padding-block:32px 80px;display:grid;gap:42px}
+h1,h2,h3{font-family:var(--display);font-weight:800;line-height:1.08;text-wrap:balance;margin:0}
+h1{font-size:clamp(32px,5.6vw,54px);letter-spacing:-.02em} h2{font-size:clamp(24px,3.2vw,32px)} h3{font-size:20px}
+h4{font:700 12px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
+p{margin:0;max-width:70ch} a{color:var(--accent)}
+.eyebrow{font:700 13px var(--mono);letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.lede{color:var(--muted);font-size:18px}
+section{display:grid;gap:16px}
+.verdict{background:var(--paper);border:2px solid var(--accent);border-radius:14px;padding:20px 22px;display:grid;gap:10px}
+.verdict ol{margin:0;padding-left:20px;display:grid;gap:8px}
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--paper)}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:1100px}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px solid var(--line)}
+th{font:700 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);position:sticky;top:0;background:var(--paper)}
+td:first-child{font-weight:800;white-space:nowrap}
+.est{font:500 11px var(--mono);color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:16px 18px;display:grid;gap:8px;min-width:0}
+.card ul{margin:0;padding-left:18px;display:grid;gap:5px}
+.take{color:var(--good);font-weight:700} .skip{color:var(--bad);font-weight:700}
+.pillrow{display:flex;gap:8px;flex-wrap:wrap}
+.pill{font:700 12px var(--mono);padding:3px 10px;border-radius:7px;background:var(--chip)}
+.big{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:22px;display:grid;gap:14px}
+.spec{display:grid;grid-template-columns:200px 1fr;gap:8px 18px;font-size:15px}
+.spec dt{font:700 13px var(--mono);color:var(--muted)} .spec dd{margin:0}
+.hand{font-family:var(--hand);font-size:30px;color:var(--accent);line-height:1}
+.mark{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+.mark svg{flex:0 0 auto}
+.num td:last-child,.num th:last-child{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums}
+.num table{min-width:520px}
+@media (max-width:640px){.spec{grid-template-columns:1fr}}
+</style>
+<div class="wrap">
+<header style="display:grid;gap:14px">
+ <span class="eyebrow">Wait, That's a Fact? · style audit · 4 Nov 2026</span>
+ <h1>What the big faceless channels do that our kit doesn't</h1>
+ <p class="lede">I audited the seven channels you sent, plus the leading faceless Shorts formats and YouTube's rules on repetitive AI content. Three research agents gathered the material. Claims I could source are linked; my own observations and estimates are marked "est." The last sections turn the findings into a new asset system for WTF. No credits have been spent.</p>
+</header>
+
+<section class="verdict" aria-labelledby="v"><h2 id="v">Why our first kit reads as amateur</h2>
+<ol>
+ <li><b>There is no character.</b> Six of the seven channels put a face on screen: caricatures, a mascot, chibi figures, painted portraits, or the presenter himself. Bill wurtz is the only exception, and his voice and typography act as the character. Our kit had a palette but nobody to watch.</li>
+ <li><b>The contrast is too low for a phone.</b> Thin chalk lines on dark navy look muddy at Shorts size. Every reference uses thick dark outlines, saturated flat fills and huge stroked type.</li>
+ <li><b>It has no signature device.</b> Johnny Harris has the globe-zoom and highlighter, History on Maps the date ticker, OverSimplified the caricature reactions. A shared grid overlay alone isn't something people recognise.</li>
+ <li><b>The pace is long-form pace.</b> Our shots held 3.5–7 seconds. Shorts that work change the picture every 1.5–3 seconds and never sit fully still.</li>
+ <li><b>The narration has information but no persona.</b> The references all have attitude: deadpan understatement, second-person "you are…", wry asides, questions. Our scripts read like accurate captions.</li>
+</ol>
+</section>
+
+<section aria-labelledby="m"><h2 id="m">Channel-by-channel audit</h2>
+<div class="tw"><table>
+<thead><tr><th>Channel</th><th>Format</th><th>Asset system</th><th>Cost to make (1–5)</th><th>Hook</th><th>Edit rate</th><th>Narration</th><th>Signature</th></tr></thead>
+<tbody>
+<tr><td>OverSimplified</td><td>10–60 min history in chronological acts, two-part epics; very slow cadence</td><td>Blobby big-head cartoon people. Famous figures are reduced to 1–2 trademark features; nations are people in flag colours; flat painted maps with arrows</td><td>4: full character acting, lip-flap</td><td>A comic cold-open skit, then the title sting</td><td>A change every 3–6 s <span class="est">est.</span></td><td>Deadpan "history teacher" at 150–170 wpm, with the creator doing silly character voices <span class="est">est.</span></td><td>Deadpan narrator against absurd characters, running jokes, modern slang in historical mouths</td></tr>
+<tr><td>bill wurtz</td><td>One continuous 9–20 min chronology; solo, 11+ months for the world-history video (<a href="https://en.wikipedia.org/wiki/Bill_Wurtz">Wikipedia</a>)</td><td>"Late-1990s clip art and ugly fonts", neon text, stick figures (<a href="https://melmagazine.com/en-us/story/meet-bill-wurtz-the-internet-musical-genius-youve-never-heard-of">MEL</a>); black backgrounds; a running year label</td><td>3: crude assets, but about 1,000 micro-shots and original music</td><td>No preamble: the story starts on line one</td><td>40–80 changes a minute <span class="est">est.</span></td><td>Lowercase deadpan everyman at about 200+ wpm, sung jingles as breaks <span class="est">est.</span></td><td>Jazz jingles, a year counter, groups "talking" to each other</td></tr>
+<tr><td>Chris Explains</td><td>About 30-min myth compilations with 35 chapters <span class="est">(from your screenshot; agents couldn't find the channel)</span></td><td>A grid of painted portrait medallions, one per myth; bold black-and-red hand-lettered headline</td><td>2–3 <span class="est">est.</span></td><td>"Biggest myths", a list promise</td><td>n/a</td><td>n/a</td><td>A medallion per myth works as a visual table of contents</td></tr>
+<tr><td>Johnny Harris</td><td>15–30 min documentary, about 4 months a video, two-column scripts (narration plus visual) (<a href="https://podwise.ai/episodes/2768274">interview</a>)</td><td>Desaturated satellite maps with globe-to-street zooms (After Effects with GEOlayers, <a href="https://aescripts.com/learn/making-maps-for-johnny-harris---volcanoes/">aescripts</a>); paper and crumple textures; highlighter sweeps; red circles and arrows; film grain</td><td>5: travel, reporting, team</td><td>An odd map fact plus a personal stake; the "visual anchor" is promised up front</td><td>15–25 changes a minute, constant slow pushes <span class="est">est.</span></td><td>Curious first person at 170–190 wpm: "here's the thing", direct "you" <span class="est">est.</span></td><td>Globe-zoom to a marker, highlighter on documents, collage-notebook grain</td></tr>
+<tr><td>History on Maps</td><td>1–10 min, 221 videos, 2–3 a month (<a href="https://vidiq.com/youtube-stats/channel/UC7JrMLRDJLUh5BPBYykMcrQ">vidIQ</a>)</td><td>A flat vector political map with solid faction fills, a date ticker, flags and battle icons; chibi figures on thumbnails</td><td>2: template map fills</td><td>Title promise ("in 5 minutes"), then straight onto the map</td><td>Few cuts but 30+ micro-changes a minute <span class="est">est.</span></td><td>Often music only; neutral encyclopedic VO when used <span class="est">est.</span></td><td>"Every day" date ticker, borders redrawing at speed</td></tr>
+<tr><td>Unknown Frequencies</td><td>10–25 min; launched Oct 2024, now 8–12M views (<a href="https://outlierkit.com/channel/unknownfrequencies-tv">OutlierKit</a>)</td><td>Thick-outlined cartoon figures with angry brows, saturated political maps, huge white stroked thumbnail text</td><td>3: simple drawings, but a lot of them</td><td>Second-person POV: "You're a 19-year-old draftee…"; the "ENTIRE" promise</td><td>20–30 a minute, stills with bob and shake <span class="est">est.</span></td><td>Wry deadpan at 170–190 wpm, "spoiler: it didn't go well" asides <span class="est">est.</span></td><td>Crude cartoon people against grim history, "ENTIRE"/"Every Rank" frames</td></tr>
+<tr><td>Easy History Explained</td><td>1–1.3 hour compilations; launched Feb 2026, 1.7M views</td><td>AI infographic panels (garbled AI text is visible in frames). A mascot (white round head, dot eyes, black hoodie) acts on scenes in thumbnails: brushing sand, fleeing a cracking pyramid</td><td>2</td><td>"What if…?" questions</td><td>A new image at least every 10 s, Ken Burns</td><td>Calm, sleep-friendly, about 145 wpm <span class="est">est.</span></td><td>The mascot reacting physically to a reveal; black-and-red headline with a stamp or X</td></tr>
+</tbody></table></div>
+<p style="font-size:14px;color:var(--muted)">Coverage note: several pages blocked automated access and no transcripts could be fetched, so pace and edit-rate figures are estimates from the formats. Before we copy any specific device, I'd watch two videos per channel.</p>
+</section>
+
+<section aria-labelledby="s"><h2 id="s">What wins in Shorts specifically</h2>
+<div class="grid">
+ <div class="card"><h4>The best Shorts benchmark: Zack D. Films (29.6M subs)</h4><ul>
+  <li>The title is a question plus an emoji ("What If The Hoover Dam Was Made Of Humans 😨", 11M views).</li>
+  <li>The first frame is already mid-action, and the camera is "almost always moving" (<a href="https://www.skool.com/the-3d-shortcut-6963">Skool</a>).</li>
+  <li>Recurring generic characters. Captions are 1–3 words in the middle of the screen. The last line runs back into the first, so it loops <span class="est">est.</span></li>
+  <li>The AI clones use the same stack we have: script, Nano Banana images, ElevenLabs voice, an image-to-video model and an editor (<a href="https://lilys.ai/en/notes/ai-shorts-20251110/make-zack-d-style-ai-shorts-free">Lilys</a>).</li></ul></div>
+ <div class="card"><h4>Retention mechanics</h4><ul>
+  <li>The first 1–3 seconds decide the swipe. Creators aim for 70–80%+ "viewed" (<a href="https://vidiq.com/blog/post/youtube-shorts-algorithm/">vidIQ</a>).</li>
+  <li>Since 31 Mar 2025 every replay counts as a view, so a seamless loop is free reach. Shorts under about 35 s can pass 100% average viewed (<a href="https://www.shortimize.com/blog/youtube-shorts-retention-rate">Shortimize</a>).</li>
+  <li>Keep captions at least 300 px above the bottom and 120 px below the top. Captions placed too low are the most common mistake (<a href="https://reap.video/blog/short-form-video-safe-zones">Reap</a>).</li></ul></div>
+ <div class="card"><h4>YouTube's "inauthentic content" rule (from 15 Jul 2025)</h4><ul>
+  <li>Content that is "mass-produced" or "looks like it's made with a template" can lose monetisation. That includes slideshows with minimal narrative and AI content from "generic or unoriginal templates" (<a href="https://support.google.com/youtube/answer/1311392">YouTube Help</a>).</li>
+  <li>The safe path is a distinct storyline and real educational value in each video. A shared intro and outro is explicitly allowed.</li>
+  <li>For us: the mascot and signature device are fine as a frame. Every episode needs its own story shape and its own visuals.</li></ul></div>
+</div>
+</section>
+
+<section aria-labelledby="p"><h2 id="p">Patterns every successful channel shares</h2>
+<div class="grid">
+ <div class="card"><ul>
+  <li><b>One persistent visual system</b> that is cheaper and more recognisable than variety: maps, paper, a cartoon figure.</li>
+  <li><b>A recurring face</b> the viewer reads emotion from, even when the channel is faceless.</li>
+  <li><b>An anchor</b> the video keeps coming back to: a map, a date ticker, a counter.</li></ul></div>
+ <div class="card"><ul>
+  <li><b>The title promises a frame</b> ("in 5 minutes", "ENTIRE", "What if"), and the video pays it off fast.</li>
+  <li><b>Constant small motion:</b> pushes, ticks, wipes, jitter. The screen is never fully still for more than 2–3 seconds.</li>
+  <li><b>The voice persona carries the comedy:</b> understatement that undercuts big events.</li></ul></div>
+ <div class="card"><ul>
+  <li><b>The sound has a signature:</b> a sting, a jingle, a whoosh vocabulary.</li>
+  <li><b>No preamble.</b> Line one is already story.</li>
+  <li><b>Simple assets, effort on script and timing.</b> None of the cheap channels wins on rendering quality; they win on clarity and personality.</li></ul></div>
+</div>
+</section>
+
+<section aria-labelledby="n"><h2 id="n">Proposed WTF system: "The Second Look"</h2>
+<p class="lede">Our brand promise is that something looks obvious until you look again. Every element below acts that out, so none of it is borrowed from one channel. It is built for 9:16 and for what AI tools do reliably.</p>
+
+<div class="big">
+ <div class="mark">
+  <svg width="150" height="190" viewBox="0 0 150 190" role="img" aria-label="Sketch of Mark: a small body with a question-mark head">
+   <path d="M44 62 C44 30 64 14 84 14 C108 14 122 30 122 50 C122 70 108 78 96 86 C88 91 84 97 84 106" fill="none" stroke="#E0700A" stroke-width="20" stroke-linecap="round"/>
+   <circle cx="74" cy="52" r="6" fill="#13213C"/><circle cx="98" cy="48" r="6" fill="#13213C"/>
+   <rect x="64" y="112" width="40" height="44" rx="14" fill="#13213C"/>
+   <path d="M64 124 L44 140 M104 124 L124 106" stroke="#13213C" stroke-width="9" stroke-linecap="round"/>
+   <path d="M74 156 L70 182 M94 156 L98 182" stroke="#13213C" stroke-width="9" stroke-linecap="round"/>
+  </svg>
+  <div style="display:grid;gap:8px;min-width:0;flex:1">
+   <span class="hand">meet Mark</span>
+   <h3>1. A mascot: Mark, the question mark</h3>
+   <p>Mark is a small navy figure whose head is the orange "?" from our logo. At every reveal his head snaps from "?" to "!" in a double-take. That is the logo, the mascot and the punchline in one move, and no other channel can claim it.</p>
+   <ul style="margin:0;padding-left:18px;display:grid;gap:4px">
+    <li>He doesn't talk. One narrator stays the voice, and a mime reads in any language.</li>
+    <li>I generate him once as a model sheet and a pack of about 12 poses with transparent backgrounds: pointing, shocked, magnifying lens, shrug, thumbs-up, "?" to "!" flip. Every episode reuses the same files, so his look can't drift.</li>
+    <li>I make one double-take clip once and reuse it in every episode. That becomes the brand moment and costs nothing after the first time.</li>
+    <li>Sketch only: the final design comes from the character sheet.</li></ul>
+  </div>
+ </div>
+</div>
+
+<div class="grid">
+ <div class="card"><h3>2. The Second-Look Lens</h3><p>At the twist, the frame freezes and desaturates and a "Wait." sting hits. Mark slides an orange-rimmed magnifying lens across the frame, and inside the lens is the truth: the hippo's reflection is a whale, a "square" window turns out rounded. I build it locally from two images, the surface view and the true view, so it costs no extra credits per use. It is the channel's signature device.</p></div>
+ <div class="card"><h3>3. A brighter notebook</h3><p>We keep the notebook idea but switch to a light page: white graph paper with a pale blue grid, an orange margin line, thick navy ink outlines, flat saturated fills, and orange highlighter for emphasis. Dark navy is kept for space and night scenes. This fixes the phone contrast problem and keeps our colours.</p></div>
+ <div class="card"><h3>4. Case-file props</h3><p>Every number arrives as a taped-on index card. Every source gets a stamped "SOURCE" tag. Key words get a highlighter wipe, and the things that matter get orange marker circles and arrows. All of it is built locally, so no AI-made text ever appears. It is the kind of tactile layer Johnny Harris uses, done in our own vocabulary.</p></div>
+ <div class="card"><h3>5. An anchor per episode</h3><p>Each episode gets one persistent on-screen counter or map that it keeps returning to, the job History on Maps' date ticker does. EP01 has a microseconds counter, EP04 a bacteria-vs-cells scoreboard, EP05 a year ticker from 1839, EP06 a flight-cycle counter, EP02 the family tree, EP03 the 12-key strip.</p></div>
+</div>
+
+<div class="big"><h3>New rules for script and edit</h3>
+<dl class="spec">
+ <dt>Length</dt><dd>35–50 s instead of 52–57 s. Under about 35 s, loops can push retention past 100%. The richest topics (EP02, EP03) stay near 50 s.</dd>
+ <dt>Pace</dt><dd>Ainsley at about 165–175 wpm (up from 155), so 100–130 words per episode.</dd>
+ <dt>Hook (0–1.5 s)</dt><dd>The first frame is already mid-action, with the claim on screen and spoken. Hook shapes rotate across episodes: claim, "you" POV, myth-bust, question. That keeps the series from looking templated.</dd>
+ <dt>The "Wait." beat</dt><dd>The narrator interrupts herself at the twist ("Wait."), followed by the lens and Mark's double-take. The full sign-off becomes a 0.6 s sting instead of a 2.5 s end card.</dd>
+ <dt>Loop ending</dt><dd>The last line is written to run back into the first line.</dd>
+ <dt>Persona</dt><dd>Wry and plain-spoken, with one deadpan aside per episode ("Van Buren lost. The word won."). The accuracy rules from the fact check stay exactly as they are.</dd>
+ <dt>Picture rate</dt><dd>A new framing every 1.5–3 s, about 20–25 per episode. Each AI image yields 2–3 framings (wide, push, detail crop), plus Mark cut-ins and local cards. That keeps the image count affordable.</dd>
+ <dt>Motion</dt><dd>Nothing is ever fully still: slow pushes, a 2 px "boil" jitter on the art, highlighter wipes, cards dropping in.</dd>
+ <dt>Sound</dt><dd>Our own sting vocabulary: a pencil scribble, a tape rip, a stamp thunk, and the "Wait." hit, all synthesised locally. The brand music bed sits under every episode.</dd>
+ <dt>Covers</dt><dd>2–4 huge stroked words, one in orange; Mark reacting; one hero object with an orange circle or X.</dd>
+</dl></div>
+
+<div class="grid">
+ <div class="card"><h4>What we take from each channel (in our own form)</h4><ul>
+  <li><span class="take">OverSimplified:</span> reduce famous things to one trademark feature; deadpan narration.</li>
+  <li><span class="take">bill wurtz:</span> no preamble, a sting between beats.</li>
+  <li><span class="take">Johnny Harris:</span> a tactile paper layer, highlighter, a marker circle on the key detail.</li>
+  <li><span class="take">History on Maps:</span> a persistent anchor counter.</li>
+  <li><span class="take">Unknown Frequencies:</span> second-person POV hooks, thick outlines.</li>
+  <li><span class="take">Easy History:</span> a mascot that physically reacts to the reveal.</li>
+  <li><span class="take">Zack D.:</span> a mid-action first frame and loop endings.</li></ul></div>
+ <div class="card"><h4>What we deliberately don't copy</h4><ul>
+  <li><span class="skip">No</span> caricatures of real people, and no photo heads on cartoon bodies. Both carry likeness risk and both belong to OverSimplified.</li>
+  <li><span class="skip">No</span> AI-generated documents, maps with labels, or archival look-alikes. Easy History's garbled AI text is the failure we're avoiding.</li>
+  <li><span class="skip">No</span> crude-on-purpose look. Bill wurtz pulls it off with music and timing; with AI art it reads as a mistake.</li>
+  <li><span class="skip">No</span> identical structure every episode, which is what YouTube's inauthentic-content rule targets.</li></ul></div>
+</div>
+</section>
+
+<section aria-labelledby="b" class="num"><h2 id="b">Credit impact (still within your 297)</h2>
+<div class="tw"><table><thead><tr><th>Item</th><th>Credits</th></tr></thead><tbody>
+<tr><td>Look test: 2 scene frames + 1 Mark sheet × 2 models</td><td>≈ 11</td></tr>
+<tr><td>Mark model sheet + 12 transparent poses (GPT Image 2.5 can output transparent backgrounds directly)</td><td>≈ 22</td></tr>
+<tr><td>Mark double-take clip (made once, reused in every episode) + 1 spare</td><td>≈ 10</td></tr>
+<tr><td>Scene art: about 10 images per episode × 6 (at 1.5–2 each)</td><td>≈ 90–120</td></tr>
+<tr><td>Hook clip per episode × 6 (Seedance 2.0 Mini, 5 each)</td><td>30</td></tr>
+<tr><td>Voiceover (shorter scripts) + brand music bed</td><td>≈ 42</td></tr>
+<tr><td><b>Planned total</b></td><td><b>≈ 205–235</b></td></tr>
+</tbody></table></div>
+<p style="font-size:14px;color:var(--muted)">This leaves about 50–80 credits of retake reserve under the 297 cap. There are fewer video clips than in the first plan. Mark, the lens and the local motion carry most of the movement, and those cost nothing per episode.</p>
+</section>
+
+<section aria-labelledby="d"><h2 id="d">Decisions for you</h2>
+<div class="grid">
+ <div class="card"><ol style="margin:0;padding-left:18px;display:grid;gap:6px">
+  <li><b>Direction:</b> approve "The Second Look" (Mark, the lens, the light notebook), or ask for changes.</li>
+  <li><b>Look test (≈11 credits):</b> may I generate Mark's sheet and two sample scenes now, so you judge real frames instead of my sketches?</li>
+  <li><b>Then scripts:</b> I'll rewrite all six to the new rules (35–50 s, "Wait." beat, loop endings, rotating hooks), keep every fact, and run the independent double-check again before anything renders.</li>
+ </ol></div>
+</div>
+</section>
+</div>
